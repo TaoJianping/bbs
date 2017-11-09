@@ -1,22 +1,3 @@
 [
-  {
-    "id": 1,
-    "password": "1be6af03717a0906a774a129ac467fcea8f89849df003548a8039cffffb12baf",
-    "username": "gua"
-  },
-  {
-    "id": 2,
-    "password": "d1fde166a8845be37f1f11b6c27ce9ee21cd511044bd459b9aae45eec904313e",
-    "username": "hello"
-  },
-  {
-    "id": 3,
-    "password": "36f5f81c35faf28dd8957d81f7a07ded6fd2a68db558bda9a5ca4904638ebfe4",
-    "username": "akirayu101"
-  },
-  {
-    "id": 4,
-    "password": "1be6af03717a0906a774a129ac467fcea8f89849df003548a8039cffffb12baf",
-    "username": "tao"
-  }
+
 ]
