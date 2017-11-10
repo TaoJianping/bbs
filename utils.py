@@ -11,3 +11,8 @@ def log(*args, **kwargs):
     dt = time.strftime(format, value)
     with open('log.gua.txt', 'a', encoding='utf-8') as f:
         print(dt, *args, file=f, **kwargs)
+
+
+secret_key = "taojianping hen NB"
+
+
