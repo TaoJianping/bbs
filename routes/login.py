@@ -41,11 +41,9 @@ def login():
     form = request.form
     u = User(form)
     log(u.validate_login)
-    if u.validate_login == True:
+    if u.validate_login() == True:
         session["username"] = form.get("username")
-        log("登录成功")
         return redirect(url_for("topic.index"))
     else:
-        log("登录失败")
         return redirect(url_for(".register"))
 

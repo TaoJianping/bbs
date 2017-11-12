@@ -14,7 +14,6 @@ class User(Model):
             return False
 
     def validate_login(self):
-        log("使用了这个验证登录函数")
         ms = User.all()
         for m in ms:
             if self.username == m.username and self.password == m.password:

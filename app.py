@@ -2,6 +2,8 @@ from flask import Flask
 from utils import secret_key
 from routes.login import main as login
 from routes.topic import main as topic
+from routes.reply import main as reply
+
 
 
 # web framework
@@ -22,6 +24,8 @@ app.secret_key = secret_key
 # 有一个 url_prefix 可以用来给蓝图中的每个路由加一个前缀
 app.register_blueprint(login, url_prefix="/login")
 app.register_blueprint(topic)
+app.register_blueprint(reply, url_prefix="/reply")
+
 
 
 # 运行代码
@@ -34,3 +38,4 @@ if __name__ == '__main__':
         port=2000,
     )
     app.run(**config)
+

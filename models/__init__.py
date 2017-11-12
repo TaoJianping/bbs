@@ -55,10 +55,12 @@ class Model(object):
         return m
 
     @classmethod
-    def new(cls, form):
+    def new(cls, form, **kwargs):
         """
         """
         m = cls(form)
+        for k, v in kwargs.items():
+            setattr(m, k, v) 
         m.save()
         return m
 

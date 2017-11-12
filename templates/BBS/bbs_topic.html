@@ -7,6 +7,16 @@
     <title>论坛主页</title>
 </head>
 <body>
-    
+    <div class="topic-list">
+        {% for m in ms %}
+            <div class="topic-each-item">
+                <span>标题</span>
+                <a href= {{ url_for("topic.detail", topic_id=m.id )}}>{{ m.title }}</a>
+            </div>
+        {% endfor %}
+    </div>
+    <div class="function-aera">
+        <a class="button-add-new" href={{ url_for("topic.build_new_topic") }}>添加新文章</a>
+    </div>
 </body>
 </html>
