@@ -17,7 +17,8 @@
         <div class="reply_all">
             {% for r in replys %}
             <div class="reply_item">
-                <span> {{ r.content }}</span>
+                <p>第{{ loop.index }}楼 作者：{{r.get_replymaker()}}</p>
+                <p>{{ r.content }}</p>
             </div>
             {%endfor%}
         </div>

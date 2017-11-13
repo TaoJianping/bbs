@@ -224,3 +224,145 @@ username: (tao)
 19:44:50 kwargs,  {'username': 'tao'} <class 'dict'>
 19:44:50 kwargs,  {'id': 2} <class 'dict'>
 19:44:50 kwargs,  {'topic_id': 2} <class 'dict'>
+19:54:50 kwargs,  {'id': 1} <class 'dict'>
+19:54:50 kwargs,  {'topic_id': 1} <class 'dict'>
+19:56:30 kwargs,  {'username': 'tao'} <class 'dict'>
+19:56:31 kwargs,  {'id': 4} <class 'dict'>
+19:56:31 kwargs,  {'topic_id': 4} <class 'dict'>
+19:56:37 kwargs,  {'username': 'tao'} <class 'dict'>
+19:56:37 kwargs,  {'id': 4} <class 'dict'>
+19:56:37 kwargs,  {'topic_id': 4} <class 'dict'>
+19:56:51 kwargs,  {'id': 4} <class 'dict'>
+19:56:51 kwargs,  {'topic_id': 4} <class 'dict'>
+19:56:53 kwargs,  {'id': 4} <class 'dict'>
+19:56:53 kwargs,  {'topic_id': 4} <class 'dict'>
+19:56:55 kwargs,  {'id': 4} <class 'dict'>
+19:56:55 kwargs,  {'topic_id': 4} <class 'dict'>
+20:00:38 kwargs,  {'id': 4} <class 'dict'>
+20:00:38 debug 3
+20:00:38 kwargs,  {'topic_id': 4} <class 'dict'>
+20:00:40 kwargs,  {'id': 1} <class 'dict'>
+20:00:40 debug 0
+20:00:40 kwargs,  {'topic_id': 1} <class 'dict'>
+20:00:42 kwargs,  {'id': 4} <class 'dict'>
+20:00:42 debug 3
+20:00:42 kwargs,  {'topic_id': 4} <class 'dict'>
+20:00:44 kwargs,  {'id': 2} <class 'dict'>
+20:00:44 debug 1
+20:00:44 kwargs,  {'topic_id': 2} <class 'dict'>
+20:32:22 kwargs,  {'id': 1} <class 'dict'>
+20:32:22 debug 0
+20:32:22 kwargs,  {'topic_id': 1} <class 'dict'>
+20:49:53 kwargs,  {'id': 1} <class 'dict'>
+20:49:53 debug 0
+20:49:53 kwargs,  {'topic_id': 1} <class 'dict'>
+20:49:53 kwargs,  {'id': 1} <class 'dict'>
+20:49:53 kwargs,  {'id': 1} <class 'dict'>
+20:49:53 kwargs,  {'id': 1} <class 'dict'>
+20:49:53 kwargs,  {'id': 1} <class 'dict'>
+20:50:14 <bound method User.validate_login of < User
+username: (tao1)
+password: (123)
+id: (None) 
+>
+>
+20:50:35 <bound method User.validate_login of < User
+username: (asd)
+password: (asd)
+id: (None) 
+>
+>
+20:50:36 kwargs,  {'id': 1} <class 'dict'>
+20:50:36 debug 0
+20:50:36 kwargs,  {'topic_id': 1} <class 'dict'>
+20:50:36 kwargs,  {'id': 1} <class 'dict'>
+20:50:36 kwargs,  {'id': 1} <class 'dict'>
+20:50:36 kwargs,  {'id': 1} <class 'dict'>
+20:50:36 kwargs,  {'id': 1} <class 'dict'>
+20:50:39 kwargs,  {'username': 'asd'} <class 'dict'>
+20:50:39 kwargs,  {'id': 1} <class 'dict'>
+20:50:39 debug 0
+20:50:39 kwargs,  {'topic_id': 1} <class 'dict'>
+20:50:39 kwargs,  {'id': 1} <class 'dict'>
+20:50:39 kwargs,  {'id': 1} <class 'dict'>
+20:50:39 kwargs,  {'id': 1} <class 'dict'>
+20:50:39 kwargs,  {'id': 1} <class 'dict'>
+20:50:39 kwargs,  {'id': 3} <class 'dict'>
+21:30:56 kwargs,  {'topic_id': 1} <class 'dict'>
+21:30:56 kwargs,  {'topic_id': 2} <class 'dict'>
+21:30:56 kwargs,  {'topic_id': 3} <class 'dict'>
+21:30:56 kwargs,  {'topic_id': 4} <class 'dict'>
+21:30:56 kwargs,  {'topic_id': 1} <class 'dict'>
+21:30:56 kwargs,  {'topic_id': 2} <class 'dict'>
+21:30:56 kwargs,  {'topic_id': 3} <class 'dict'>
+21:30:56 kwargs,  {'topic_id': 4} <class 'dict'>
+21:30:56 kwargs,  {'topic_id': 1} <class 'dict'>
+21:30:56 kwargs,  {'topic_id': 2} <class 'dict'>
+21:30:56 kwargs,  {'topic_id': 3} <class 'dict'>
+21:30:56 kwargs,  {'topic_id': 4} <class 'dict'>
+21:30:57 kwargs,  {'id': 1} <class 'dict'>
+21:30:57 debug 0
+21:30:57 kwargs,  {'topic_id': 1} <class 'dict'>
+21:30:57 kwargs,  {'id': 1} <class 'dict'>
+21:30:57 kwargs,  {'id': 1} <class 'dict'>
+21:30:57 kwargs,  {'id': 1} <class 'dict'>
+21:30:57 kwargs,  {'id': 1} <class 'dict'>
+21:30:57 kwargs,  {'id': 3} <class 'dict'>
+21:30:59 kwargs,  {'id': 2} <class 'dict'>
+21:30:59 debug 1
+21:30:59 kwargs,  {'topic_id': 2} <class 'dict'>
+21:30:59 kwargs,  {'id': 1} <class 'dict'>
+21:31:05 kwargs,  {'topic_id': 1} <class 'dict'>
+21:31:05 kwargs,  {'topic_id': 2} <class 'dict'>
+21:31:05 kwargs,  {'topic_id': 3} <class 'dict'>
+21:31:05 kwargs,  {'topic_id': 4} <class 'dict'>
+21:31:08 kwargs,  {'id': 2} <class 'dict'>
+21:31:08 debug 1
+21:31:08 kwargs,  {'topic_id': 2} <class 'dict'>
+21:31:08 kwargs,  {'id': 1} <class 'dict'>
+21:31:10 kwargs,  {'topic_id': 1} <class 'dict'>
+21:31:10 kwargs,  {'topic_id': 2} <class 'dict'>
+21:31:10 kwargs,  {'topic_id': 3} <class 'dict'>
+21:31:10 kwargs,  {'topic_id': 4} <class 'dict'>
+21:31:12 kwargs,  {'id': 2} <class 'dict'>
+21:31:12 debug 1
+21:31:12 kwargs,  {'topic_id': 2} <class 'dict'>
+21:31:12 kwargs,  {'id': 1} <class 'dict'>
+21:31:15 kwargs,  {'username': 'asd'} <class 'dict'>
+21:31:15 kwargs,  {'id': 2} <class 'dict'>
+21:31:15 debug 1
+21:31:15 kwargs,  {'topic_id': 2} <class 'dict'>
+21:31:15 kwargs,  {'id': 1} <class 'dict'>
+21:31:15 kwargs,  {'id': 3} <class 'dict'>
+21:31:20 kwargs,  {'topic_id': 1} <class 'dict'>
+21:31:20 kwargs,  {'topic_id': 2} <class 'dict'>
+21:31:20 kwargs,  {'topic_id': 3} <class 'dict'>
+21:31:20 kwargs,  {'topic_id': 4} <class 'dict'>
+21:31:22 kwargs,  {'topic_id': 1} <class 'dict'>
+21:31:22 kwargs,  {'topic_id': 2} <class 'dict'>
+21:31:22 kwargs,  {'topic_id': 3} <class 'dict'>
+21:31:22 kwargs,  {'topic_id': 4} <class 'dict'>
+21:31:22 kwargs,  {'topic_id': 1} <class 'dict'>
+21:31:22 kwargs,  {'topic_id': 2} <class 'dict'>
+21:31:22 kwargs,  {'topic_id': 3} <class 'dict'>
+21:31:22 kwargs,  {'topic_id': 4} <class 'dict'>
+21:31:22 kwargs,  {'topic_id': 1} <class 'dict'>
+21:31:22 kwargs,  {'topic_id': 2} <class 'dict'>
+21:31:22 kwargs,  {'topic_id': 3} <class 'dict'>
+21:31:22 kwargs,  {'topic_id': 4} <class 'dict'>
+21:31:22 kwargs,  {'topic_id': 1} <class 'dict'>
+21:31:22 kwargs,  {'topic_id': 2} <class 'dict'>
+21:31:22 kwargs,  {'topic_id': 3} <class 'dict'>
+21:31:22 kwargs,  {'topic_id': 4} <class 'dict'>
+21:31:22 kwargs,  {'topic_id': 1} <class 'dict'>
+21:31:22 kwargs,  {'topic_id': 2} <class 'dict'>
+21:31:22 kwargs,  {'topic_id': 3} <class 'dict'>
+21:31:22 kwargs,  {'topic_id': 4} <class 'dict'>
+21:31:22 kwargs,  {'topic_id': 1} <class 'dict'>
+21:31:22 kwargs,  {'topic_id': 2} <class 'dict'>
+21:31:22 kwargs,  {'topic_id': 3} <class 'dict'>
+21:31:22 kwargs,  {'topic_id': 4} <class 'dict'>
+21:31:23 kwargs,  {'topic_id': 1} <class 'dict'>
+21:31:23 kwargs,  {'topic_id': 2} <class 'dict'>
+21:31:23 kwargs,  {'topic_id': 3} <class 'dict'>
+21:31:23 kwargs,  {'topic_id': 4} <class 'dict'>

@@ -31,6 +31,8 @@ def index():
 @main.route("/detail/<int:topic_id>")
 def detail(topic_id):
     t = Topic.find_by(id=topic_id)
+    t.view += 1
+    t.save()
     r = Reply.find_all(topic_id=topic_id)
     return render_template("BBS/topic_detail.html", t=t, replys=r)
 

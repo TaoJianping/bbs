@@ -12,6 +12,7 @@
             <div class="topic-each-item">
                 <span>标题</span>
                 <a href= {{ url_for("topic.detail", topic_id=m.id )}}>{{ m.title }}</a>
+                <span> {{ m.get_replynumber() }}/{{ m.view }}</span>
             </div>
         {% endfor %}
     </div>

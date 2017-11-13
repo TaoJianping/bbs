@@ -1,23 +1,34 @@
 [
   {
-    "ct": 1510476088,
-    "content": "asdasdasdasdasdasd",
     "user_id": 1,
+    "ct": 1510476088,
+    "view": 6,
+    "content": "asdasdasdasdasdasd",
     "title": "asdasdasdasd",
     "id": 1
   },
   {
-    "ct": 1510476094,
-    "content": "asdasdasdasdasd",
     "user_id": 1,
+    "ct": 1510476094,
+    "view": 5,
+    "content": "asdasdasdasdasd",
     "title": "asdasdasd",
     "id": 2
   },
   {
-    "ct": 1510476117,
-    "content": "asdnsjklfnwdjvnjsdcdasncjaslnfcaskil",
     "user_id": 1,
+    "ct": 1510476117,
+    "view": 0,
+    "content": "asdnsjklfnwdjvnjsdcdasncjaslnfcaskil",
     "title": "test",
     "id": 3
+  },
+  {
+    "user_id": 1,
+    "ct": 1510574190,
+    "view": 2,
+    "content": "我喜欢二二",
+    "title": "测试文章",
+    "id": 4
   }
 ]
