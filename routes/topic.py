@@ -10,6 +10,8 @@ from flask import (
 
 from models.user import User
 from models.topic import Topic
+from models.reply import Reply
+
 
 main = Blueprint("topic", __name__)
 
@@ -29,7 +31,8 @@ def index():
 @main.route("/detail/<int:topic_id>")
 def detail(topic_id):
     t = Topic.find_by(id=topic_id)
-    return render_template("BBS/topic_detail.html", t=t)
+    r = Reply.find_all(topic_id=topic_id)
+    return render_template("BBS/topic_detail.html", t=t, replys=r)
 
 
 @main.route("/build_new_topic", methods=["GET"])

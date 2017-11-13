@@ -7,16 +7,27 @@
     <title> {{ t.title }} </title>
 </head>
 <body>
+    <h1>文章</h1>
     <div class="topic_detail">
         <div class="topic_header"> {{ t.title }} </div>
         <div class="topic_content"> {{ t.content }} </div>
     </div>
+    <h1>回复</h1>
     <div class="Reply_aera">
-        <form action= {{ url_for("reply.add")}} method="POST">
+        <div class="reply_all">
+            {% for r in replys %}
+            <div class="reply_item">
+                <span> {{ r.content }}</span>
+            </div>
+            {%endfor%}
+        </div>
+        <div class="Reply_reply">
+            <form action= {{ url_for("reply.add")}} method="POST">
             <input type="hidden" value= {{ t.id }} name="topic_id">
             <textarea name="content" cols="30" rows="10" placeholder="请输入评论"></textarea>
             <button>提交</button>
             </form>
         </div>
+    </div>
 </body>
 </html>

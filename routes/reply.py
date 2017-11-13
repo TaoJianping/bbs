@@ -25,7 +25,7 @@ def add():
     form = request.form
     user = current_user()
     reply = Reply.new(form, author_id=user.id)
-    return redirect( url_for("topic.index"))
+    return redirect( url_for("topic.detail", topic_id=str(reply.topic_id)))
 
 
 
