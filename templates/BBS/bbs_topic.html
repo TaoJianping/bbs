@@ -7,6 +7,11 @@
     <title>论坛主页</title>
 </head>
 <body>
+    <div class="board_list">
+        {% for board in boards %}
+        <a href="/?board_id={{ board.id }}"> {{ board.board_name}} </a>
+        {% endfor %}
+    </div>
     <div class="topic-list">
         {% for m in ms %}
             <div class="topic-each-item">
@@ -17,7 +22,8 @@
         {% endfor %}
     </div>
     <div class="function-aera">
-        <a class="button-add-new" href={{ url_for("topic.build_new_topic") }}>添加新文章</a>
+        <a class="button-add-new-article" href={{ url_for("topic.build_new_topic") }}>添加新文章</a>
+        <a class="button-add-new-board" href={{ url_for("board.board") }}>增加板块</a>        
     </div>
 </body>
 </html>

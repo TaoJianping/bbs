@@ -3,6 +3,8 @@ from utils import secret_key
 from routes.login import main as login
 from routes.topic import main as topic
 from routes.reply import main as reply
+from routes.board import main as board
+
 
 
 
@@ -25,6 +27,8 @@ app.secret_key = secret_key
 app.register_blueprint(login, url_prefix="/login")
 app.register_blueprint(topic)
 app.register_blueprint(reply, url_prefix="/reply")
+app.register_blueprint(board, url_prefix="/board")
+
 
 
 

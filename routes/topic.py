@@ -11,6 +11,8 @@ from flask import (
 from models.user import User
 from models.topic import Topic
 from models.reply import Reply
+from models.board import Board
+
 
 
 main = Blueprint("topic", __name__)
@@ -24,8 +26,9 @@ def current_user():
 
 @main.route("/", methods=["GET"])
 def index():
+    boards = Board.all()
     ms = Topic.all()
-    return render_template("BBS/bbs_topic.html", ms=ms)
+    return render_template("BBS/bbs_topic.html", ms=ms, boards=boards)
 
 
 @main.route("/detail/<int:topic_id>")
