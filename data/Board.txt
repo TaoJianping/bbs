@@ -2,21 +2,21 @@
   {
     "id": 1,
     "ct": 1510752307,
-    "board_name": "aasdasd"
+    "board_name": "金"
   },
   {
     "id": 2,
     "ct": 1510756138,
-    "board_name": "啊啊啊"
+    "board_name": "木"
   },
   {
     "id": 3,
     "ct": 1510756141,
-    "board_name": "3343"
+    "board_name": "水"
   },
   {
     "id": 4,
     "ct": 1510756143,
-    "board_name": "444"
+    "board_name": "火"
   }
 ]

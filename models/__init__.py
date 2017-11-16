@@ -80,7 +80,6 @@ class Model(object):
     @classmethod
     def find_all(cls, **kwargs):
         ms = []
-        log('kwargs, ', kwargs, type(kwargs))
         k, v = '', ''
         for key, value in kwargs.items():
             k, v = key, value
@@ -97,7 +96,6 @@ class Model(object):
         用法如下，kwargs 是只有一个元素的 dict
         u = User.find_by(username='gua')
         """
-        log('kwargs, ', kwargs, type(kwargs))
         k, v = '', ''
         for key, value in kwargs.items():
             k, v = key, value

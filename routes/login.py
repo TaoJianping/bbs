@@ -40,7 +40,6 @@ def add_user():
 def login():
     form = request.form
     u = User(form)
-    log(u.validate_login)
     if u.validate_login() == True:
         session["username"] = form.get("username")
         return redirect(url_for("topic.index"))

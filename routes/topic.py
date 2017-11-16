@@ -13,6 +13,8 @@ from models.topic import Topic
 from models.reply import Reply
 from models.board import Board
 
+from utils import log
+
 
 
 main = Blueprint("topic", __name__)
@@ -27,7 +29,12 @@ def current_user():
 @main.route("/", methods=["GET"])
 def index():
     boards = Board.all()
-    ms = Topic.all()
+    board_id = int(request.args.get("board_id", -1))
+    log("asdasd")
+    if board_id == 1 or board_id == -1:
+        ms = Topic.all()
+    else:
+        ms = Topic.find_all(board_id=board_id)
     return render_template("BBS/bbs_topic.html", ms=ms, boards=boards)
 
 
@@ -42,7 +49,8 @@ def detail(topic_id):
 
 @main.route("/build_new_topic", methods=["GET"])
 def build_new_topic():
-    return render_template("BBS/build_new_topic.html")
+    boards = Board.all()
+    return render_template("BBS/build_new_topic.html", board=boards)
 
 
 @main.route("/add", methods=["POST"])

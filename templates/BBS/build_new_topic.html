@@ -10,6 +10,11 @@
     <form action= {{ url_for("topic.add") }} method="POST">
         <input type="text" name="title" placeholder="请输入标题">
         <br>
+        <select name="board_id">
+            {% for b in board %}
+            <option value= {{ b.id }}> {{ b.board_name }} </option>
+            {% endfor %}
+        </select>
         <textarea rows="20" cols="20" name="content" placeholder="请输入文章内容"></textarea>
         <br>
         <button>提交</button>
