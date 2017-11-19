@@ -6,6 +6,7 @@ class User(Model):
         self.id = form.get("user_id", None)
         self.username = form.get("username", None)
         self.password = form.get("password", None)
+        self.level = 1
 
     def validate_register(self):
         if len(self.username) >= 3 and len(self.password) >= 3:

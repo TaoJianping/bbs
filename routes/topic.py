@@ -25,6 +25,27 @@ def current_user():
     user = User.find_by(username=username)
     return user
 
+import functools
+def login_require(func):
+    @functools.wraps(func)
+    def wrap(*args, **kwargs):
+        u = current_user()
+        if u is not None:
+            return func(*args, **kwargs)
+        else:
+            return redirect(url_for("login.index"))
+    return wrap
+
+def admin_require(func):
+    @functools.wraps(func)
+    def wrap(*args, **kwargs):
+        u = current_user()
+        if u is not None and u.level == 10:
+            return func(*args, **kwargs)
+        else:
+            return redirect(url_for("login.index"))
+    return wrap
+
 
 @main.route("/", methods=["GET"])
 def index():
@@ -48,6 +69,7 @@ def detail(topic_id):
 
 
 @main.route("/build_new_topic", methods=["GET"])
+@login_require
 def build_new_topic():
     boards = Board.all()
     return render_template("BBS/build_new_topic.html", board=boards)
@@ -60,7 +82,9 @@ def add():
     new_topic = Topic.new(form, user_id=user.id)
     return redirect(url_for("topic.index"))
 
-
-
-
-
+@main.route("/log_out", methods=["GET"])
+def log_out():
+    log(session)
+    session.pop("username")
+    return redirect(url_for("topic.index"))    
+        

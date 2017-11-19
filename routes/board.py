@@ -10,6 +10,7 @@ from flask import (
 
 from models.user import User
 from models.board import Board
+from .topic import admin_require
 
 main = Blueprint("board", __name__)
 
@@ -21,6 +22,7 @@ def current_user():
 
 
 @main.route("/board", methods=["GET"])
+@admin_require
 def board():
     u = current_user()
     if u == None:
@@ -30,6 +32,7 @@ def board():
     
 
 @main.route("/add", methods=["POST"])
+@admin_require
 def add():
     form = request.form
     reply = Board.new(form)

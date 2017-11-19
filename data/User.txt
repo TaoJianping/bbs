@@ -1,22 +1,38 @@
 [
   {
-    "username": "tao",
+    "id": 1,
     "password": "123",
-    "id": 1
+    "level": 1,
+    "username": "tao"
   },
   {
-    "username": "tao",
+    "id": 2,
     "password": "123",
-    "id": 2
+    "level": 1,
+    "username": "tao"
   },
   {
-    "username": "asd",
+    "id": 3,
     "password": "asd",
-    "id": 3
+    "level": 1,
+    "username": "asd"
   },
   {
-    "username": "123",
+    "id": 4,
     "password": "123123123",
-    "id": 4
+    "level": 1,
+    "username": "123"
+  },
+  {
+    "id": 5,
+    "password": "123",
+    "level": 1,
+    "username": "tao"
+  },
+  {
+    "id": 6,
+    "password": "123",
+    "level": 10,
+    "username": "admin"
   }
 ]
