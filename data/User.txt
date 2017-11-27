@@ -1,38 +1,9 @@
 [
   {
+    "user_image": "1.jpg",
+    "level": 1,
     "id": 1,
     "password": "123",
-    "level": 1,
     "username": "tao"
-  },
-  {
-    "id": 2,
-    "password": "123",
-    "level": 1,
-    "username": "tao"
-  },
-  {
-    "id": 3,
-    "password": "asd",
-    "level": 1,
-    "username": "asd"
-  },
-  {
-    "id": 4,
-    "password": "123123123",
-    "level": 1,
-    "username": "123"
-  },
-  {
-    "id": 5,
-    "password": "123",
-    "level": 1,
-    "username": "tao"
-  },
-  {
-    "id": 6,
-    "password": "123",
-    "level": 10,
-    "username": "admin"
   }
 ]

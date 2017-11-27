@@ -25,6 +25,7 @@ def current_user():
     user = User.find_by(username=username)
     return user
 
+
 import functools
 def login_require(func):
     @functools.wraps(func)
