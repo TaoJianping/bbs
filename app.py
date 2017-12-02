@@ -9,7 +9,6 @@ from routes.profile import main as profile
 
 
 
-
 # web framework
 # web application
 # __main__
@@ -46,4 +45,3 @@ if __name__ == '__main__':
         port=2000,
     )
     app.run(**config)
-

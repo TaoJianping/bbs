@@ -12,7 +12,7 @@
         <br>
         <select name="board_id">
             {% for b in board %}
-            <option value= {{ b.id }}> {{ b.board_name }} </option>
+            <option value= {{ b._id }}> {{ b.board_name }}</option>
             {% endfor %}
         </select>
         <textarea rows="20" cols="20" name="content" placeholder="请输入文章内容"></textarea>

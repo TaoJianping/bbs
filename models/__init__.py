@@ -1,49 +1,60 @@
 import json
 import time
+import random
+
 from utils import log
 
-
-def save(data, path):
-    """
-    data 是 dict 或者 list
-    path 是保存文件的路径
-    """
-    s = json.dumps(data, indent=2, ensure_ascii=False)
-    with open(path, 'w+', encoding='utf-8') as f:
-        # log('save', path, s, data)
-        f.write(s)
+# import pymongo
+from pymongo import MongoClient
+# 首先要连接mongodb,如果你什么都不写就连接默认的地址
+client = MongoClient()
 
 
-def load(path):
-    with open(path, 'r', encoding='utf-8') as f:
-        s = f.read()
-        # log('load', s)
-        return json.loads(s)
+# 如果没有数据插入,你就算执行了下面两句他也不会在robomongo里面显示
+# 获取或者创建数据库 如果没有就自己创建一个
+db = client["WebTest"]
 
+# 下面这个是获取或者创建一个collection,同样的,如果没有就自己创建一个
+# collection = db["haha"]
 
-# Model 是一个 ORM（object relation mapper）
-# 好处就是不需要关心存储数据的细节，直接使用即可
 class Model(object):
     """
     Model 是所有 model 的基类
-    @classmethod 是一个套路用法
-    例如
-    user = User()
-    user.db_path() 返回 User.txt
+    Model 是一个 ORM（object relation mapper）
     """
     @classmethod
-    def db_path(cls):
+    def insert(cls, form):
         """
-        cls 是类名, 谁调用的类名就是谁的
-        classmethod 有一个参数是 class(这里我们用 cls 这个名字)
-        所以我们可以得到 class 的名字
+        插入数据
+        ===
+        使用insert函数插入各种对象
+        args:
+            form: dict, 代表着对象的各种属性;
+            document_name: str, 代表这要创建的collection的名字, 点语法不支持字符串,所以使用[];
         """
-        classname = cls.__name__
-        path = 'data/{}.txt'.format(classname)
-        return path
+        db[cls.__name__].insert(form)
+
+    @classmethod
+    def find(cls, query=None):
+        '''
+        查找数据
+        ===
+        find 返回一个可迭代对象，使用 list 函数转为数组
+        args:
+            data_name: str, 就是所要查找的document的名字
+            query: dict, 就是要查找的约束条件, 默认是None, Bson竟然也识别的出来
+        return:
+            返回的是一个包含所有对象的属性的列表
+        '''
+        # data = list(db[data_name].find(query, {"_id": 0}))
+        data = list(db[cls.__name__].find(query))
+        # print('所有用户', user_list)
+        return data
 
     @classmethod
     def _new_from_dict(cls, d):
+        """
+        """
         # 因为子元素的 __init__ 需要一个 form 参数
         # 所以这个给一个空字典
         m = cls({})
@@ -60,7 +71,7 @@ class Model(object):
         """
         m = cls(form)
         for k, v in kwargs.items():
-            setattr(m, k, v) 
+            setattr(m, k, v)
         m.save()
         return m
 
@@ -68,9 +79,13 @@ class Model(object):
     def all(cls):
         """
         all 方法(类里面的函数叫方法)使用 load 函数得到所有的 models
+        ===
+        args:
+            cls
+        return:
+
         """
-        path = cls.db_path()
-        models = load(path)
+        models = cls.find()
         # 这里用了列表推导生成一个包含所有 实例 的 list
         # 因为这里是从 存储的数据文件 中加载所有的数据
         # 所以用 _new_from_dict 这个特殊的函数来初始化一个数据
@@ -79,56 +94,37 @@ class Model(object):
 
     @classmethod
     def find_all(cls, **kwargs):
-        ms = []
-        k, v = '', ''
-        for key, value in kwargs.items():
-            k, v = key, value
-        all = cls.all()
-        for m in all:
-            # 也可以用 getattr(m, k) 取值
-            if v == m.__dict__[k]:
-                ms.append(m)
-        return ms
+        """
+        根据给定的关键词参数组成的dict,在数据库中寻找相应的数据
+        ===
+        args
+            kwargs: 关键词参数, 给定的查询条件,如author_id=ObjectId(***)
+        return
+            models: 通过找到的数据重构的一系列实例对象
+        """
+        data_name = cls.__name__
+        data = cls.find(kwargs)
+        models = [cls._new_from_dict(m) for m in data]
+        return models
 
     @classmethod
     def find_by(cls, **kwargs):
         """
-        用法如下，kwargs 是只有一个元素的 dict
-        u = User.find_by(username='gua')
+        根据给定的关键词参数组成的dict,在数据库中寻找相应的数据
+        ===
+        args
+            kwargs: 关键词参数, 给定的查询条件,如author_id=ObjectId(***)
+        return
+            model: 通过找到的数据重构的一系列实例对象
         """
-        k, v = '', ''
-        for key, value in kwargs.items():
-            k, v = key, value
-        all = cls.all()
-        for m in all:
-            # 也可以用 getattr(m, k) 取值
-            if v == m.__dict__[k]:
-                return m
-        return None
+        data = cls.find(kwargs)
+        if data == []:
+            # 如果没有找到任何一条数据,就返回None
+            return None
+        attributes = data[0]
+        model = cls._new_from_dict(attributes)
+        return model
 
-    @classmethod
-    def find(cls, id):
-        return cls.find_by(id=id)
-
-    @classmethod
-    def delete(cls, id):
-        models = cls.all()
-        index = -1
-        for i, e in enumerate(models):
-            if e.id == id:
-                index = i
-                break
-        # 判断是否找到了这个 id 的数据
-        if index == -1:
-            # 没找到
-            pass
-        else:
-            obj = models.pop(index)
-            l = [m.__dict__ for m in models]
-            path = cls.db_path()
-            save(l, path)
-            # 返回被删除的元素
-            return obj
 
     def __repr__(self):
         """
@@ -149,35 +145,29 @@ class Model(object):
         d = self.__dict__.copy()
         return d
 
+    def update(self):
+        """
+        更新一个现有的数据, 以后可以用update函数提升性能,现在就先用mongodb里面的save函数
+        ===
+        args
+            collection_name: str, 这个是要改的集合的名字
+            kwargs: dict, 这个是要更新的那个对象的所有属性
+        """
+        collection_name = self.__class__.__name__
+        attributes = self.__dict__
+        db[collection_name].save(attributes)
+
     def save(self):
         """
-        用 all 方法读取文件中的所有 model 并生成一个 list
-        把 self 添加进去并且保存进文件
+        插入一个全新的数据,跟update完全不同,这个实际上用的是insert
+        ===
+        args: 
+            instance
         """
-        # log('debug save')
-        models = self.all()
-        # log('models', models)
-        # 如果没有 id，说明是新添加的元素
-        if self.id is None:
-            # 设置 self.id
-            # 先看看是否是空 list
-            if len(models) == 0:
-                # 我们让第一个元素的 id 为 1（当然也可以为 0）
-                self.id = 1
-            else:
-                m = models[-1]
-                # log('m', m)
-                self.id = m.id + 1
-            models.append(self)
-        else:
-            # index = self.find(self.id)
-            index = -1
-            for i, m in enumerate(models):
-                if m.id == self.id:
-                    index = i
-                    break
-            log('debug', index)
-            models[index] = self
-        l = [m.__dict__ for m in models]
-        path = self.db_path()
-        save(l, path)
+        form = self.__dict__
+        # 经历过insert也就是mongodb的插入函数调用之后, 会自动插入一个"_id"数值
+        self.insert(form)
+        # log("m的属性格式", m.__dict__)
+        # 所以要把这个"_id"删除, 不然JSON无法保存
+        # m.__dict__.pop("_id")
+        # 忽然发现__dict__函数就可以操作他的所有属性

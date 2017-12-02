@@ -1,3 +1,5 @@
+from bson.objectid import ObjectId
+
 from models import Model
 from models.reply import Reply
 import time
@@ -10,7 +12,7 @@ class Topic(Model):
         self.id = form.get("topic_id", None)
         self.ct = int(time.time())        
         self.view = 0
-        self.board_id = int(form.get("board_id", -1))
+        self.board_id = ObjectId(form.get("board_id", None))
 
     def get_replynumber(self):
         rn = str(len(Reply.find_all(topic_id=self.id)))

@@ -9,14 +9,14 @@
 <body>
     <div class="board_list">
         {% for board in boards %}
-        <a href="/?board_id={{ board.id }}"> {{ board.board_name}} </a>
+        <a href="/?board_id={{ board._id }}"> {{ board.board_name}} </a>
         {% endfor %}
     </div>
     <div class="topic-list">
         {% for m in ms %}
             <div class="topic-each-item">
                 <span>标题</span>
-                <a href= {{ url_for("topic.detail", topic_id=m.id )}}>{{ m.title }}</a>
+                <a href= {{ url_for("topic.detail", topic_id=m._id )}}>{{ m.title }}</a>
                 <span> {{ m.get_replynumber() }}/{{ m.view }}</span>
             </div>
         {% endfor %}

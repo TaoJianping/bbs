@@ -1,3 +1,5 @@
+import functools
+
 from flask import (
     render_template,
     request,
@@ -13,6 +15,8 @@ from models.topic import Topic
 from models.reply import Reply
 from models.board import Board
 
+from bson.objectid import ObjectId
+
 from utils import log
 
 
@@ -26,7 +30,6 @@ def current_user():
     return user
 
 
-import functools
 def login_require(func):
     @functools.wraps(func)
     def wrap(*args, **kwargs):
@@ -51,21 +54,20 @@ def admin_require(func):
 @main.route("/", methods=["GET"])
 def index():
     boards = Board.all()
-    board_id = int(request.args.get("board_id", -1))
-    log("asdasd")
-    if board_id == 1 or board_id == -1:
+    board_id = ObjectId(request.args.get("board_id", None))
+    if board_id == ObjectId("5a1e9237fe3d2659def8f88f") or board_id == None:
         ms = Topic.all()
     else:
         ms = Topic.find_all(board_id=board_id)
     return render_template("BBS/bbs_topic.html", ms=ms, boards=boards)
 
 
-@main.route("/detail/<int:topic_id>")
+@main.route("/detail/<topic_id>")
 def detail(topic_id):
-    t = Topic.find_by(id=topic_id)
+    t = Topic.find_by(_id=ObjectId(topic_id))
     t.view += 1
-    t.save()
-    r = Reply.find_all(topic_id=topic_id)
+    t.update()
+    r = Reply.find_all(topic_id=ObjectId(topic_id))
     return render_template("BBS/topic_detail.html", t=t, replys=r)
 
 
@@ -80,12 +82,12 @@ def build_new_topic():
 def add():
     form = request.form
     user = current_user()
-    new_topic = Topic.new(form, user_id=user.id)
+    new_topic = Topic.new(form, user_id=user._id)
     return redirect(url_for("topic.index"))
 
 @main.route("/log_out", methods=["GET"])
 def log_out():
     log(session)
     session.pop("username")
-    return redirect(url_for("topic.index"))    
+    return redirect(url_for("topic.index"))
         

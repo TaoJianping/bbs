@@ -1,9 +1,0 @@
-[
-  {
-    "user_image": "1.jpg",
-    "level": 1,
-    "id": 1,
-    "password": "123",
-    "username": "tao"
-  }
-]
