@@ -18,6 +18,4 @@ class User(Model):
         ms = User.all()
         for m in ms:
             if self.username == m.username and self.password == m.password:
-                return True 
-
-
+                return True

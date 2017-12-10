@@ -15,5 +15,5 @@ class Topic(Model):
         self.board_id = ObjectId(form.get("board_id", None))
 
     def get_replynumber(self):
-        rn = str(len(Reply.find_all(topic_id=self.id)))
+        rn = str(len(Reply.find_all(topic_id=ObjectId(self._id))))
         return rn

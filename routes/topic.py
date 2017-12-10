@@ -54,12 +54,12 @@ def admin_require(func):
 @main.route("/", methods=["GET"])
 def index():
     boards = Board.all()
-    board_id = ObjectId(request.args.get("board_id", None))
-    if board_id == ObjectId("5a1e9237fe3d2659def8f88f") or board_id == None:
+    board_id = request.args.get("board_id", None)
+    if board_id == "5a1e9237fe3d2659def8f88f" or board_id is None:
         ms = Topic.all()
     else:
-        ms = Topic.find_all(board_id=board_id)
-    return render_template("BBS/bbs_topic.html", ms=ms, boards=boards)
+        ms = Topic.find_all(board_id=ObjectId(board_id))
+    return render_template("BBS/bbs.html", ms=ms, boards=boards)
 
 
 @main.route("/detail/<topic_id>")
@@ -82,7 +82,7 @@ def build_new_topic():
 def add():
     form = request.form
     user = current_user()
-    new_topic = Topic.new(form, user_id=user._id)
+    Topic.new(form, user_id=user._id)
     return redirect(url_for("topic.index"))
 
 @main.route("/log_out", methods=["GET"])

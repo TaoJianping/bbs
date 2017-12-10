@@ -117,13 +117,11 @@ class Model(object):
         return
             model: 通过找到的数据重构的一系列实例对象
         """
-        data = cls.find(kwargs)
-        if data == []:
-            # 如果没有找到任何一条数据,就返回None
-            return None
-        attributes = data[0]
-        model = cls._new_from_dict(attributes)
-        return model
+        data = db[cls.__name__].find_one(kwargs)
+        if data is not None:
+            model = cls._new_from_dict(data)
+            return model
+        return None
 
 
     def __repr__(self):

@@ -30,8 +30,8 @@ main = Blueprint("profile", __name__)
 @login_require
 def index():
     u = current_user()
-    flash(u'登录成功，欢迎回来！')
-    img_url = "../../image/" + u.user_image
+    if u.user_image is not None:
+        img_url = "../../image/" + u.user_image 
     return make_response(render_template("BBS/profile.html", user=u, img_url=img_url))
 
 
@@ -49,9 +49,8 @@ def add_image():
         file.save(os.path.join(folder_image_name, filename))
         u.user_image = filename
         u.save()
-        return redirect(url_for(".index"))    
+        return redirect(url_for(".index"))
     else:
-        log("request.url2:", request.url)            
         return redirect(url_for(".index"))
 
 

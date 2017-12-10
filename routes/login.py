@@ -29,7 +29,7 @@ def register():
 def add_user():
     form = request.form
     user = User(form)
-    if user.validate_register() == True:
+    if user.validate_register() is True:
         user = User.new(form)
         return redirect(url_for(".index"))
     else:
@@ -40,7 +40,7 @@ def add_user():
 def login():
     form = request.form
     u = User(form)
-    if u.validate_login() == True:
+    if u.validate_login() is True:
         session["username"] = form.get("username")
         return redirect(url_for("topic.index"))
     else:
