@@ -7,7 +7,6 @@ from flask import (
     session,
     url_for,
     Blueprint,
-    make_response,
 )
 
 from models.user import User

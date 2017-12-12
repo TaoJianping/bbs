@@ -15,6 +15,8 @@ from utils import log
 
 main = Blueprint("login", __name__)
 
+
+
 @main.route("/", methods=["GET"])
 def index():
     return make_response(render_template("BBS/login.html"))
@@ -30,7 +32,8 @@ def add_user():
     form = request.form
     user = User(form)
     if user.validate_register() is True:
-        user = User.new(form)
+        user.hash_password()
+        user.save()
         return redirect(url_for(".index"))
     else:
         return redirect(url_for(".register"))
@@ -39,8 +42,8 @@ def add_user():
 @main.route("/login", methods=["POST"])
 def login():
     form = request.form
-    u = User(form)
-    if u.validate_login() is True:
+    user = User(form)
+    if user.validate_login() is True:
         session["username"] = form.get("username")
         return redirect(url_for("topic.index"))
     else:
