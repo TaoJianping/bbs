@@ -1,0 +1,32 @@
+body {
+    background-image: url("../image/loginbackground.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.login-board {
+    background-color: white;
+    height: 340px;
+    width: 250px;
+    padding: 20px;    
+    position: absolute;      
+    top: 50%;  
+    left: 50%;  
+    margin-left: -125px;  
+    margin-top: -170px;
+}
+
+.form-group.bmd-form-group.is-focused:first-child {
+    color: red;  
+}
+
+.btn.btn-primary {
+    color: white;
+    background-color: #03A9F4;
+    float: right;
+}
+
+.btn.btn-primary:hover {
+    color: black;
+    background-color: #e7edf3;
+}
