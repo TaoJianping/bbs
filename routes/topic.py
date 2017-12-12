@@ -1,5 +1,5 @@
 import functools
-
+import math
 from flask import (
     render_template,
     request,
@@ -54,12 +54,18 @@ def admin_require(func):
 @main.route("/", methods=["GET"])
 def index():
     boards = Board.all()
-    board_id = request.args.get("board_id", None)
-    if board_id == "5a1e9237fe3d2659def8f88f" or board_id is None:
-        ms = Topic.all()
+    board_id = request.args.get("board", None)
+    board = Board.find_by(_id=ObjectId(board_id))
+    page = int(request.args.get("page", 0))
+    if (board_id == "5a1e9237fe3d2659def8f88f") or (board_id is None):
+        topic_number = Topic.get_collection_number()
+        page_number = math.ceil(topic_number/7)
+        ms = Topic.find_byPage(page)
     else:
-        ms = Topic.find_all(board_id=ObjectId(board_id))
-    return render_template("BBS/bbs.html", ms=ms, boards=boards)
+        topic_number = Topic.get_collection_number(board_id=ObjectId(board_id))
+        page_number = math.ceil(topic_number/7)             
+        ms = Topic.find_byPage(page, board_id=ObjectId(board_id))
+    return render_template("BBS/bbs.html", ms=ms, boards=boards, filter=board, pagenumber=page_number)
 
 
 @main.route("/detail/<topic_id>")

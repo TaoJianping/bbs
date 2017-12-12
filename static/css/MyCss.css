@@ -55,6 +55,33 @@
 .sidetool {
 }
 
+.nav-pills .nav-link {
+    display: inline;
+}
+
+.nav-tabs .dropdown-toggle {
+    background-color: #e7edf3;
+    display: inline;
+}
+
+.nav-tabs .nav-item .nav-link {
+    display: inline-block;    
+    border-bottom-width: 3px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+.nav-item.dropdown {
+    position: absolute;
+    right: 10px;
+}
+
+.nav-item.dropdown.show {
+    position: absolute;
+    right: 10px;
+}
+
+
 
 @media screen and (max-device-width:872px){
 

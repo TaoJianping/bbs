@@ -123,6 +123,42 @@ class Model(object):
             return model
         return None
 
+    @classmethod
+    def find_byPage(cls, page=0, **kwargs):
+        """
+        根据给定的page和条件找到相应的topic
+        ===
+        args
+            kwargs: 关键词参数, 给定的查询条件,如板块ID
+        return
+            model: 通过找到的数据重构的一系列实例对象
+        """
+        if page == 0 or page == 1:
+            data = list(db[cls.__name__].find(kwargs).sort([("ct", -1)]).limit(7).skip(0))
+            if data is not None:
+                models = [cls._new_from_dict(m) for m in data]
+                return models
+        else:
+            log("kwargs是:", kwargs)
+            data = list(db[cls.__name__].find(kwargs).sort([("ct", -1)]).limit(7).skip((page-1)*7))
+            log("data返回的数据是：", data)
+            if data is not None:
+                models = [cls._new_from_dict(m) for m in data]
+                return models
+        return None
+
+    @classmethod
+    def get_collection_number(cls, **kwargs):
+        """
+        根据给定的关键词参数组成的dict,在数据库中寻找相应的数据
+        ===
+        args
+            kwargs: 关键词参数, 给定的查询条件,如author_id=ObjectId(***)
+        return
+            model: 通过找到的数据重构的一系列实例对象
+        """
+        number = db[cls.__name__].find(kwargs).count()
+        return number
 
     def __repr__(self):
         """

@@ -56,12 +56,22 @@
         <div class="col-md-10">
             <div class="card text-center">
                 <div class="card-header">
-                  <ul class="nav nav-pills card-header-pills">
+                  <ul class="nav nav-pills card-header-pills nav-tabs">
                     {% for board in boards %}
                     <li class="nav-item">
                     <a class="nav-link" href="/?board_id={{ board._id }}"> {{ board.board_name}} </a>
                     </li>
                     {% endfor %}
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Action</a>
+                      <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">最新回复</a>
+                        <a class="dropdown-item" href="#">最新发布</a>
+                        <a class="dropdown-item" href="#">最热讨论</a>                        
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">关注此版块</a>
+                      </div>
+                    </li>
                   </ul>
                 </div>
                 <div class="list-group topic-list">
@@ -80,14 +90,9 @@
                       <li class="page-item disabled">
                         <span class="page-link">Previous</span>
                       </li>
-                      <li class="page-item"><a class="page-link" href="#">1</a></li>
-                      <li class="page-item active">
-                        <span class="page-link">
-                          2
-                          <span class="sr-only">(current)</span>
-                        </span>
-                      </li>
-                      <li class="page-item"><a class="page-link" href="#">3</a></li>
+                      {% for i in range(pagenumber) %}
+                      <li class="page-item"><a class="page-link" href="?page={{ loop.index }}&board_id={{ filter._id }}"> {{ loop.index }} </a></li>
+                      {% endfor %}
                       <li class="page-item">
                         <a class="page-link" href="#">Next</a>
                       </li>
