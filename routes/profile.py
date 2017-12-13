@@ -30,9 +30,7 @@ main = Blueprint("profile", __name__)
 @login_require
 def index():
     u = current_user()
-    if u.user_image is not None:
-        img_url = "../../image/" + u.user_image 
-    return make_response(render_template("BBS/profile.html", user=u, img_url=img_url))
+    return make_response(render_template("BBS/profile.html", user=u))
 
 
 def allow_file(filename):
@@ -55,5 +53,5 @@ def add_image():
 
 
 @main.route("/<filename>")
-def user_img(filename):
+def user_img(filename="default.jpg"):
     return send_from_directory(folder_image_name, filename)

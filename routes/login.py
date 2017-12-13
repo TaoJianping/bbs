@@ -44,7 +44,7 @@ def login():
     form = request.form
     user = User(form)
     if user.validate_login() is True:
-        session["username"] = form.get("username")
+        session["email"] = form.get("email")
         return redirect(url_for("topic.index"))
     else:
         return redirect(url_for(".register"))

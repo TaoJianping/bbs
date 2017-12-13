@@ -81,7 +81,102 @@
     right: 10px;
 }
 
+.profile-body {
+    background-image: url("../image/profilebackground.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+}
 
+.profile-body .profile-board.card {
+    background-color: white;
+    display: flex;
+    margin-top: 10%;
+    margin-left: 15%;
+    margin-right: 15%;
+    padding: 30px;
+}
+.user-head-image {
+    margin: 0 auto;
+}
+
+.user-head-image img {
+    display: block;
+    height: 70px;
+    width: 70px;
+    margin: 0 auto;
+}
+
+.Upload-Avatar-button {
+    display: block;
+    opacity: 0;
+    height: 70px;
+    width: 70px;
+    position: absolute;
+    z-index: 10;
+    top: 30px;
+    margin: 0 auto;
+}
+
+/* .Upload-Avatar-button:hover {
+    opacity: 0;
+    display: inline-block;
+    height: 70px;
+    width: 70px;
+    position: relative;
+    z-index: 10;
+} */
+
+.upload-user-image {
+    margin: 0 auto;
+}
+
+.form-group.col-md-6.inlineFormCustomSelect .custom-select {
+    display: block;
+}
+
+.profile-body .btn.btn-primary.card {
+    float: right;
+}
+
+.profile-body .btn.btn-danger.card {
+    background-color: #FF5252;
+    color: white;
+    margin-right: 6px;
+    float: right;
+}
+
+.profile-body .btn.btn-danger.card:hover {
+    background-color: #e7edf3;
+    color: #FF5252;
+}
+
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 1000px white inset !important;
+}
+
+.user-head-image button.card {
+    text-align: center;
+    margin: 10px auto;
+    background-color: #4CAF50;
+    color: white;
+}
+
+.user-head-image button.card:hover {
+    text-align: center;
+    margin: 10px auto;
+    background-color: #e7edf3;
+    color: #4CAF50;
+}
+
+.btn.btn-reset.card {
+    background-color: #FBC02D;
+    color: white;   
+}
+
+.btn.btn-reset.card:hover {
+    background-color: #e7edf3;
+    color: #FBC02D; 
+}
 
 @media screen and (max-device-width:872px){
 

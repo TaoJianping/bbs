@@ -1,27 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=., initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>{{ user.username }}的详细资料</title>
-</head>
-<body>
-    {% for message in get_flashed_messages() %}
-    <div class="alert alert-warning">
-        {{ message }}
-    </div>
-    {% endfor %}
-    <div class="user-container">
-        <h3>用户名: {{ user.username }}</h3>
-        <h4>密码: {{ user.password }}</h4>
-        <img src= {{ url_for(".user_img", filename=user.user_image) }} alt="" srcset=""/>
-    </div>
-    <div class="upload-user-image">
-        <form action= {{ url_for(".add_image") }} method="post" enctype="multipart/form-data">
-            <input type=file name=file>
-            <input type=submit value=上传>
-        </form>
-    </div>
-</body>
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">
+        <link rel="stylesheet" href="../../static/css/bootstrap-material-design.css">
+        <link rel="stylesheet" href="../../static/css/MyCss.css">
+        <title>{{ user.username }}的详细资料</title>
+    </head>
+    <body class="profile-body">
+        <div class="profile-board card">
+            {% for message in get_flashed_messages() %}
+            <div class="alert alert-warning">
+                {{ message }}
+            </div>
+            {% endfor %}
+            <div class="user-head-image">
+                    <img src= {{ url_for(".user_img", filename=user.user_image) }} alt="您的头像" srcset=""/>                      
+                    <form action= {{ url_for(".add_image") }} method="post" enctype="multipart/form-data">
+                        <label class="Upload-Avatar-button card" for="img_input">上传文件</label>                
+                        <input id="img_input" type=file name=file style="display: none;">
+                        <button type="submit" class="card">提交</button>
+                    </form>
+            </div>
+            <form>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                <label for="inputEmail4" class="col-form-label">用户名</label>
+                <input type="text" class="form-control" id="inputEmail4" placeholder="{{ user.username }}">
+                </div>
+                <div class="form-group col-md-6">
+                <label for="inputPassword4" class="col-form-label">邮箱</label>
+                <input type="email" class="form-control" id="inputPassword4" placeholder="{{ user.username }}">
+                </div>
+            </div>
+            <div class="form-row">                    
+            <div class="form-group col-md-6">
+                <label for="inputAddress" class="col-form-label">地址</label>
+                <input type="text" class="form-control" id="inputAddress" placeholder="xx市xx区">
+            </div>
+            <div class="form-group col-md-6 inlineFormCustomSelect">
+                <label for="inlineFormCustomSelect" class="col-form-label">国籍</label>
+                <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="inlineFormCustomSelect">
+                    <option selected>Choose...</option>
+                    <option value="China">China</option>
+                    <option value="America">America</option>
+                    <option value="Spain">Spain</option>
+                </select>
+            </div>
+            </div>
+            <button type="submit" class="btn btn-primary card">提交修改</button>
+            <button type="submit" class="btn btn-danger card">修改密码</button>
+            <button type="reset" class="btn btn-reset card">重置</button>
+            </form>
+        </div>
+    </body>
 </html>

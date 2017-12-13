@@ -11,10 +11,10 @@
   </head>
   <body>
       <div class="login-board card">
-        <form class="login-form">
+        <form class="login-form" action=" {{ url_for('login.login')}} " method="post">
             <div class="form-group">
                 <label for="exampleInputEmail1">Email address</label>
-                <input type="email" name="username" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
                 <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
             </div>
             <div class="form-group">
@@ -27,7 +27,8 @@
                 Remember me
                 </label>
             </div>
-            <button type="submit" class="btn btn-primary card">Log in</button>
+            <a class="form-text text-muted" href="{{ url_for('.register')}}">注册加入我们</a>
+            <button type="submit" class="btn btn-primary card">SIGN IN</button>
         </form>
       </div>
 

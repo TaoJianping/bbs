@@ -24,3 +24,23 @@
 15:26:15 data返回的数据是： [{'_id': ObjectId('5a22b448fe3d265d0df3f317'), 'view': 3, 'content': '1111', 'board_id': ObjectId('5a1e92d0fe3d2661af6c10e6'), 'user_id': ObjectId('5a228469fe3d261eeb4a9911'), 'id': None, 'title': '11111', 'ct': 1512223816}, {'_id': ObjectId('5a2295ccfe3d2638c7789d7a'), 'view': 8, 'content': '1111', 'board_id': ObjectId('5a1e9237fe3d2659def8f88f'), 'user_id': ObjectId('5a229417fe3d2636f3b2b1f0'), 'id': None, 'title': '111', 'ct': 1512216012}, {'_id': ObjectId('5a22941ffe3d2636f3b2b1f1'), 'view': 68, 'content': '111111111111111111', 'board_id': ObjectId('5a1e9237fe3d2659def8f88f'), 'user_id': ObjectId('5a229417fe3d2636f3b2b1f0'), 'id': None, 'title': '111111111111', 'ct': 1512215583}]
 16:02:12 <SecureCookieSession {'username': 'tao'}>
 18:33:47 <SecureCookieSession {}>
+13:59:00 <SecureCookieSession {'username': 'tjp563613470@live.com'}>
+17:13:18 < User
+user_image: (default.jpg)
+password: (123)
+email: (None)
+id: (None)
+username: (None)
+level: (1) 
+>
+
+17:16:32 < User
+id: (None)
+username: (tjp563613470@live.com)
+password: (123)
+email: (tjp563613470@live.com)
+user_image: (default.jpg)
+level: (1) 
+>
+
+17:19:04 <SecureCookieSession {'username': 'tjp563613470@live.com'}>

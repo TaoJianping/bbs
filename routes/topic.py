@@ -24,8 +24,8 @@ main = Blueprint("topic", __name__)
 
 
 def current_user():
-    username = session.get("username", None)
-    user = User.find_by(username=username)
+    email = session.get("email", None)
+    user = User.find_by(email=email)
     return user
 
 
