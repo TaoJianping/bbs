@@ -8,6 +8,7 @@ from flask import (
     url_for,
     Blueprint,
 )
+import flask_blogging
 
 from models.user import User
 from models.topic import Topic
@@ -95,4 +96,9 @@ def log_out():
     log(session)
     session.pop("username")
     return redirect(url_for("topic.index"))
-        
+
+@main.route("/markdown", methods=["GET"])
+@login_require
+def build_new_topic():
+    boards = Board.all()
+    return render_template("BBS/build_new_topic.html", board=boards)

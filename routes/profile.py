@@ -20,6 +20,7 @@ from routes.topic import login_require
 from config import accept_user_file_type
 from config import folder_image_name
 
+from bson.objectid import ObjectId
 
 
 
@@ -46,7 +47,7 @@ def add_image():
         filename = secure_filename(file.filename)
         file.save(os.path.join(folder_image_name, filename))
         u.user_image = filename
-        u.save()
+        u.update()
         return redirect(url_for(".index"))
     else:
         return redirect(url_for(".index"))
@@ -55,3 +56,19 @@ def add_image():
 @main.route("/<filename>")
 def user_img(filename="default.jpg"):
     return send_from_directory(folder_image_name, filename)
+
+
+@main.route("/edit_user", methods=["post"])
+@login_require
+def edit_user():
+    """
+    用户提交表单修改自己的信息
+    return
+        返回个人信息页面
+    """
+    user = current_user()
+    user = User.find_by(_id=user._id)
+    for k, v in request.form.items():
+        setattr(user, k, v)
+    user.update()
+    return redirect(url_for(".index"))

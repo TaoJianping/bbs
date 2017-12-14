@@ -21,29 +21,30 @@
                     <form action= {{ url_for(".add_image") }} method="post" enctype="multipart/form-data">
                         <label class="Upload-Avatar-button card" for="img_input">上传文件</label>                
                         <input id="img_input" type=file name=file style="display: none;">
-                        <button type="submit" class="card">提交</button>
+                        <button type="submit" class="card">确定</button>
                     </form>
             </div>
-            <form>
+            <small id="headHelp" class="form-text text-muted">点击头像提交你要上传的头像，然后点确定</small>            
+            <form action="{{ url_for('profile.edit_user')}}" method="post">
             <div class="form-row">
                 <div class="form-group col-md-6">
                 <label for="inputEmail4" class="col-form-label">用户名</label>
-                <input type="text" class="form-control" id="inputEmail4" placeholder="{{ user.username }}">
+                <input type="text" name="username" class="form-control" id="inputEmail4" value="{{ user.username }}">
                 </div>
                 <div class="form-group col-md-6">
                 <label for="inputPassword4" class="col-form-label">邮箱</label>
-                <input type="email" class="form-control" id="inputPassword4" placeholder="{{ user.username }}">
+                <input type="email" name="email" class="form-control" id="inputPassword4" value="{{ user.email }}">
                 </div>
             </div>
             <div class="form-row">                    
             <div class="form-group col-md-6">
                 <label for="inputAddress" class="col-form-label">地址</label>
-                <input type="text" class="form-control" id="inputAddress" placeholder="xx市xx区">
+                <input type="text" name="address" class="form-control" id="inputAddress" value="{{ user.address }}" placeholder="xx市xx区">
             </div>
             <div class="form-group col-md-6 inlineFormCustomSelect">
-                <label for="inlineFormCustomSelect" class="col-form-label">国籍</label>
-                <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="inlineFormCustomSelect">
-                    <option selected>Choose...</option>
+                <label for="inline  FormCustomSelect" class="col-form-label">国籍</label>
+                <select class="custom-select mb-2 mr-sm-2 mb-sm-0" name="nation" id="inlineFormCustomSelect">
+                    <option value="{{ user.nation }}">Choose...</option>
                     <option value="China">China</option>
                     <option value="America">America</option>
                     <option value="Spain">Spain</option>

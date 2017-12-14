@@ -170,12 +170,20 @@ input:-webkit-autofill {
 
 .btn.btn-reset.card {
     background-color: #FBC02D;
-    color: white;   
+    color: white;
 }
 
 .btn.btn-reset.card:hover {
     background-color: #e7edf3;
     color: #FBC02D; 
+}
+
+small#headHelp {
+    margin: 0 auto;
+}
+
+.user-head-image form{
+    margin-bottom: 0px;
 }
 
 @media screen and (max-device-width:872px){
