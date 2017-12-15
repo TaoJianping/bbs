@@ -67,3 +67,110 @@ address: (上海市)
 
 13:53:59 kwargs是: {}
 13:53:59 data返回的数据是： [{'title': '1', 'id': None, 'content': '1', 'view': 0, 'user_id': ObjectId('5a228469fe3d261eeb4a9911'), '_id': ObjectId('5a2e5c3afe3d262dd9c1ae12'), 'ct': 1512987706, 'board_id': ObjectId('5a1e9237fe3d2659def8f88f')}, {'title': '8', 'id': None, 'ct': 1512980855, 'view': 0, 'user_id': ObjectId('5a228469fe3d261eeb4a9911'), '_id': ObjectId('5a2e4177fe3d264f384f4789'), 'content': '8', 'board_id': ObjectId('5a1e92bcfe3d2661af6c10e5')}, {'title': '66666', 'id': None, 'ct': 1512980841, 'view': 0, 'user_id': ObjectId('5a228469fe3d261eeb4a9911'), '_id': ObjectId('5a2e4169fe3d264f384f4754'), 'content': '6666666', 'board_id': ObjectId('5a1e9237fe3d2659def8f88f')}, {'title': '67', 'id': None, 'ct': 1512980833, 'view': 0, 'user_id': ObjectId('5a228469fe3d261eeb4a9911'), '_id': ObjectId('5a2e4161fe3d264f384f4727'), 'content': '777', 'board_id': ObjectId('5a1e92bcfe3d2661af6c10e5')}, {'title': '7', 'id': None, 'ct': 1512980824, 'view': 0, 'user_id': ObjectId('5a228469fe3d261eeb4a9911'), '_id': ObjectId('5a2e4158fe3d264f384f46f5'), 'content': '7', 'board_id': ObjectId('5a1e92bcfe3d2661af6c10e5')}, {'title': '5', 'id': None, 'ct': 1512980816, 'view': 0, 'user_id': ObjectId('5a228469fe3d261eeb4a9911'), '_id': ObjectId('5a2e4150fe3d264f384f46ca'), 'content': '6', 'board_id': ObjectId('5a1e92bcfe3d2661af6c10e5')}, {'title': '5', 'id': None, 'ct': 1512980795, 'view': 0, 'user_id': ObjectId('5a228469fe3d261eeb4a9911'), '_id': ObjectId('5a2e413bfe3d264f384f46a0'), 'content': '5', 'board_id': ObjectId('5a1e92bcfe3d2661af6c10e5')}]
+11:21:34 ImmutableMultiDict([('test-editormd-markdown-doc', 'hello\r\n```\r\nhello world\r\n```'), ('test-editormd-html-code', '<p>hello</p>\r\n<pre><code>hello world\r\n</code></pre>')])
+11:22:26 ImmutableMultiDict([('test-editormd-html-code', '<p>hello</p>\r\n<pre><code>hello world\r\n</code></pre>'), ('test-editormd-markdown-doc', 'hello\r\n```\r\nhello world\r\n```')])
+13:39:11 <SecureCookieSession {'email': 'tjp563613470@live.com'}>
+13:43:51 kwargs是: {}
+13:43:51 data返回的数据是： [{'view': 0, 'title': '111', 'ct': 1512964005, 'board_id': ObjectId('5a1e9237fe3d2659def8f88f'), 'user_id': ObjectId('5a228469fe3d261eeb4a9911'), 'id': None, '_id': ObjectId('5a2dffa5fe3d260b99596cb8'), 'content': '111'}, {'view': 0, 'title': '111', 'ct': 1512964001, 'board_id': ObjectId('5a1e9237fe3d2659def8f88f'), 'user_id': ObjectId('5a228469fe3d261eeb4a9911'), 'id': None, '_id': ObjectId('5a2dffa1fe3d260b99596c98'), 'content': '1111'}, {'view': 1, 'title': '111', 'ct': 1512963998, 'board_id': ObjectId('5a1e9237fe3d2659def8f88f'), 'user_id': ObjectId('5a228469fe3d261eeb4a9911'), 'id': None, '_id': ObjectId('5a2dff9efe3d260b99596c79'), 'content': '1111'}, {'view': 0, 'title': '111', 'ct': 1512963993, 'board_id': ObjectId('5a1e9237fe3d2659def8f88f'), 'user_id': ObjectId('5a228469fe3d261eeb4a9911'), 'id': None, '_id': ObjectId('5a2dff99fe3d260b99596c5b'), 'content': '1111'}, {'view': 0, 'title': '111', 'ct': 1512963989, 'board_id': ObjectId('5a1e9237fe3d2659def8f88f'), 'user_id': ObjectId('5a228469fe3d261eeb4a9911'), 'id': None, '_id': ObjectId('5a2dff95fe3d260b99596c3e'), 'content': '1111'}, {'view': 0, 'title': '111', 'ct': 1512963985, 'board_id': ObjectId('5a1e9237fe3d2659def8f88f'), 'user_id': ObjectId('5a228469fe3d261eeb4a9911'), 'id': None, '_id': ObjectId('5a2dff91fe3d260b99596c22'), 'content': '1111'}, {'view': 3, 'title': '111', 'content': '111', 'board_id': ObjectId('5a1e9237fe3d2659def8f88f'), 'user_id': ObjectId('5a228469fe3d261eeb4a9911'), 'id': None, '_id': ObjectId('5a2382a1fe3d261dbd3c721f'), 'ct': 1512276641}]
+13:44:01 kwargs是: {}
+13:44:01 data返回的数据是： [{'view': 0, 'title': '1', 'content': '1', 'board_id': ObjectId('5a1e9237fe3d2659def8f88f'), 'user_id': ObjectId('5a228469fe3d261eeb4a9911'), 'id': None, '_id': ObjectId('5a2e5c3afe3d262dd9c1ae12'), 'ct': 1512987706}, {'view': 0, 'title': '8', 'ct': 1512980855, 'board_id': ObjectId('5a1e92bcfe3d2661af6c10e5'), 'user_id': ObjectId('5a228469fe3d261eeb4a9911'), 'id': None, '_id': ObjectId('5a2e4177fe3d264f384f4789'), 'content': '8'}, {'view': 0, 'title': '66666', 'ct': 1512980841, 'board_id': ObjectId('5a1e9237fe3d2659def8f88f'), 'user_id': ObjectId('5a228469fe3d261eeb4a9911'), 'id': None, '_id': ObjectId('5a2e4169fe3d264f384f4754'), 'content': '6666666'}, {'view': 0, 'title': '67', 'ct': 1512980833, 'board_id': ObjectId('5a1e92bcfe3d2661af6c10e5'), 'user_id': ObjectId('5a228469fe3d261eeb4a9911'), 'id': None, '_id': ObjectId('5a2e4161fe3d264f384f4727'), 'content': '777'}, {'view': 0, 'title': '7', 'ct': 1512980824, 'board_id': ObjectId('5a1e92bcfe3d2661af6c10e5'), 'user_id': ObjectId('5a228469fe3d261eeb4a9911'), 'id': None, '_id': ObjectId('5a2e4158fe3d264f384f46f5'), 'content': '7'}, {'view': 0, 'title': '5', 'ct': 1512980816, 'board_id': ObjectId('5a1e92bcfe3d2661af6c10e5'), 'user_id': ObjectId('5a228469fe3d261eeb4a9911'), 'id': None, '_id': ObjectId('5a2e4150fe3d264f384f46ca'), 'content': '6'}, {'view': 0, 'title': '5', 'ct': 1512980795, 'board_id': ObjectId('5a1e92bcfe3d2661af6c10e5'), 'user_id': ObjectId('5a228469fe3d261eeb4a9911'), 'id': None, '_id': ObjectId('5a2e413bfe3d264f384f46a0'), 'content': '5'}]
+13:44:02 kwargs是: {}
+13:44:02 data返回的数据是： [{'view': 0, 'title': '4', 'ct': 1512980788, 'board_id': ObjectId('5a1e92bcfe3d2661af6c10e5'), 'user_id': ObjectId('5a228469fe3d261eeb4a9911'), 'id': None, '_id': ObjectId('5a2e4134fe3d264f384f4674'), 'content': '4'}, {'view': 0, 'title': '3', 'ct': 1512980702, 'board_id': ObjectId('5a1e92bcfe3d2661af6c10e5'), 'user_id': ObjectId('5a228469fe3d261eeb4a9911'), 'id': None, '_id': ObjectId('5a2e40defe3d264f384f464a'), 'content': '4'}, {'view': 0, 'title': '2', 'ct': 1512980675, 'board_id': ObjectId('5a1e9237fe3d2659def8f88f'), 'user_id': ObjectId('5a228469fe3d261eeb4a9911'), 'id': None, '_id': ObjectId('5a2e40c3fe3d264f384f45d8'), 'content': '3'}, {'view': 0, 'title': '1231', 'ct': 1512980670, 'board_id': ObjectId('5a1e92bcfe3d2661af6c10e5'), 'user_id': ObjectId('5a228469fe3d261eeb4a9911'), 'id': None, '_id': ObjectId('5a2e40befe3d264f384f45b2'), 'content': '111'}, {'view': 0, 'title': '3333', 'ct': 1512967345, 'board_id': ObjectId('5a1e9237fe3d2659def8f88f'), 'user_id': ObjectId('5a228469fe3d261eeb4a9911'), 'id': None, '_id': ObjectId('5a2e0cb1fe3d260b99596d8a'), 'content': '3333'}, {'view': 0, 'title': '2222', 'ct': 1512967339, 'board_id': ObjectId('5a1e9237fe3d2659def8f88f'), 'user_id': ObjectId('5a228469fe3d261eeb4a9911'), 'id': None, '_id': ObjectId('5a2e0cabfe3d260b99596d67'), 'content': '2222'}, {'view': 0, 'title': '1111', 'ct': 1512967335, 'board_id': ObjectId('5a1e9237fe3d2659def8f88f'), 'user_id': ObjectId('5a228469fe3d261eeb4a9911'), 'id': None, '_id': ObjectId('5a2e0ca7fe3d260b99596d45'), 'content': '1111'}]
+13:44:04 kwargs是: {}
+13:44:04 data返回的数据是： [{'view': 0, 'title': '111', 'ct': 1512964005, 'board_id': ObjectId('5a1e9237fe3d2659def8f88f'), 'user_id': ObjectId('5a228469fe3d261eeb4a9911'), 'id': None, '_id': ObjectId('5a2dffa5fe3d260b99596cb8'), 'content': '111'}, {'view': 0, 'title': '111', 'ct': 1512964001, 'board_id': ObjectId('5a1e9237fe3d2659def8f88f'), 'user_id': ObjectId('5a228469fe3d261eeb4a9911'), 'id': None, '_id': ObjectId('5a2dffa1fe3d260b99596c98'), 'content': '1111'}, {'view': 1, 'title': '111', 'ct': 1512963998, 'board_id': ObjectId('5a1e9237fe3d2659def8f88f'), 'user_id': ObjectId('5a228469fe3d261eeb4a9911'), 'id': None, '_id': ObjectId('5a2dff9efe3d260b99596c79'), 'content': '1111'}, {'view': 0, 'title': '111', 'ct': 1512963993, 'board_id': ObjectId('5a1e9237fe3d2659def8f88f'), 'user_id': ObjectId('5a228469fe3d261eeb4a9911'), 'id': None, '_id': ObjectId('5a2dff99fe3d260b99596c5b'), 'content': '1111'}, {'view': 0, 'title': '111', 'ct': 1512963989, 'board_id': ObjectId('5a1e9237fe3d2659def8f88f'), 'user_id': ObjectId('5a228469fe3d261eeb4a9911'), 'id': None, '_id': ObjectId('5a2dff95fe3d260b99596c3e'), 'content': '1111'}, {'view': 0, 'title': '111', 'ct': 1512963985, 'board_id': ObjectId('5a1e9237fe3d2659def8f88f'), 'user_id': ObjectId('5a228469fe3d261eeb4a9911'), 'id': None, '_id': ObjectId('5a2dff91fe3d260b99596c22'), 'content': '1111'}, {'view': 3, 'title': '111', 'content': '111', 'board_id': ObjectId('5a1e9237fe3d2659def8f88f'), 'user_id': ObjectId('5a228469fe3d261eeb4a9911'), 'id': None, '_id': ObjectId('5a2382a1fe3d261dbd3c721f'), 'ct': 1512276641}]
+13:44:04 kwargs是: {}
+13:44:04 data返回的数据是： [{'view': 3, 'title': '11111', 'ct': 1512223816, 'board_id': ObjectId('5a1e92d0fe3d2661af6c10e6'), 'user_id': ObjectId('5a228469fe3d261eeb4a9911'), 'id': None, '_id': ObjectId('5a22b448fe3d265d0df3f317'), 'content': '1111'}, {'view': 8, 'title': '111', 'ct': 1512216012, 'board_id': ObjectId('5a1e9237fe3d2659def8f88f'), 'user_id': ObjectId('5a229417fe3d2636f3b2b1f0'), 'id': None, '_id': ObjectId('5a2295ccfe3d2638c7789d7a'), 'content': '1111'}, {'view': 68, 'title': '111111111111', 'ct': 1512215583, 'board_id': ObjectId('5a1e9237fe3d2659def8f88f'), 'user_id': ObjectId('5a229417fe3d2636f3b2b1f0'), 'id': None, '_id': ObjectId('5a22941ffe3d2636f3b2b1f1'), 'content': '111111111111111111'}]
+13:46:03 board is : None
+13:46:45 board is : 5a1e92bcfe3d2661af6c10e5
+13:46:47 board is : 5a1e92bcfe3d2661af6c10e5
+13:46:47 board is : 5a1e92bcfe3d2661af6c10e5
+13:46:48 board is : 5a1e92bcfe3d2661af6c10e5
+13:46:48 board is : 5a1e92bcfe3d2661af6c10e5
+13:54:31 board is : 5a1e92bcfe3d2661af6c10e5
+13:54:32 board is : 5a1e92bcfe3d2661af6c10e5
+13:54:32 board is : 5a1e92bcfe3d2661af6c10e5
+13:54:33 board is : 5a1e92bcfe3d2661af6c10e5
+13:54:57 board is : < Board
+id: (None)
+_id: (5a1e92bcfe3d2661af6c10e5)
+ct: (1511953084)
+board_name: (Python) 
+>
+
+13:54:58 board is : < Board
+id: (None)
+_id: (5a1e92bcfe3d2661af6c10e5)
+ct: (1511953084)
+board_name: (Python) 
+>
+
+13:55:59 board is : < Board
+id: (None)
+board_name: (JavaScript)
+ct: (1511953110)
+_id: (5a1e92d6fe3d2661af6c10e7) 
+>
+
+13:56:00 board is : < Board
+id: (None)
+board_name: (Go)
+ct: (1511953104)
+_id: (5a1e92d0fe3d2661af6c10e6) 
+>
+
+13:56:01 board is : < Board
+id: (None)
+board_name: (Python)
+ct: (1511953084)
+_id: (5a1e92bcfe3d2661af6c10e5) 
+>
+
+13:56:01 board is : < Board
+id: (None)
+board_name: (全部)
+ct: (1511952951)
+_id: (5a1e9237fe3d2659def8f88f) 
+>
+
+13:56:03 board is : < Board
+id: (None)
+board_name: (Python)
+ct: (1511953084)
+_id: (5a1e92bcfe3d2661af6c10e5) 
+>
+
+13:56:03 board is : < Board
+id: (None)
+board_name: (Go)
+ct: (1511953104)
+_id: (5a1e92d0fe3d2661af6c10e6) 
+>
+
+13:56:04 board is : < Board
+id: (None)
+board_name: (JavaScript)
+ct: (1511953110)
+_id: (5a1e92d6fe3d2661af6c10e7) 
+>
+
+13:56:04 board is : < Board
+id: (None)
+board_name: (JavaScript)
+ct: (1511953110)
+_id: (5a1e92d6fe3d2661af6c10e7) 
+>
+
+13:56:05 board is : < Board
+id: (None)
+board_name: (Python)
+ct: (1511953084)
+_id: (5a1e92bcfe3d2661af6c10e5) 
+>
+
+13:56:05 board is : < Board
+id: (None)
+board_name: (全部)
+ct: (1511952951)
+_id: (5a1e9237fe3d2659def8f88f) 
+>
+

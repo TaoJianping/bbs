@@ -7,7 +7,7 @@ from flask import request
 from flask import url_for
 from flask import session
 
-from models.user import User 
+from models.user import User
 
 from utils import log
 
@@ -45,7 +45,13 @@ def login():
     user = User(form)
     if user.validate_login() is True:
         session["email"] = form.get("email")
-        return redirect(url_for("topic.index"))
+        return redirect(url_for("bbs.index"))
     else:
         return redirect(url_for(".register"))
 
+
+@main.route("/log_out", methods=["GET"])
+def log_out():
+    log(session)
+    session.pop("username")
+    return redirect(url_for("bbs.index"))

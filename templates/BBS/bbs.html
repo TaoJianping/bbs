@@ -43,7 +43,7 @@
   <div class="container navtool">
       <div class="row">
         <div class="col-md-2 sidetool">
-            <a role="button" class="button-add-new-article card btn btn-primary btn-md" href={{ url_for("topic.build_new_topic") }}>
+            <a role="button" class="button-add-new-article card btn btn-primary btn-md" href={{ url_for("topic.topic_write") }}>
               发布新话题
             </a>
             <nav id="navbar-example3" class="navbar navbar-light bg-light">
@@ -106,9 +106,9 @@
         </div>
       </div>
       <div class="function-aera">
-          <a class="button-add-new-article" href={{ url_for("topic.build_new_topic") }}>添加新文章</a>
+          <a class="button-add-new-article" href="{{ url_for('topic.topic_write') }}">添加新文章</a>
           <a class="button-add-new-board" href={{ url_for("board.board") }}>增加板块</a>
-          <a class="button-log-out" href={{ url_for("topic.log_out") }}>退出登录</a>        
+          <a class="button-log-out" href={{ url_for("login.log_out") }}>退出登录</a>        
       </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

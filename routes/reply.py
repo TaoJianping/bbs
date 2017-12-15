@@ -10,7 +10,7 @@ from flask import (
 
 from models.user import User
 from models.reply import Reply
-from .topic import login_require
+from .bbs import login_require
 
 main = Blueprint("reply", __name__)
 

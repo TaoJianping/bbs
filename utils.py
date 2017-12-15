@@ -1,7 +1,5 @@
 import os.path
 import time
-import json
-
 
 def log(*args, **kwargs):
     # time.time() 返回 unix time
@@ -11,8 +9,3 @@ def log(*args, **kwargs):
     dt = time.strftime(format, value)
     with open('log.txt', 'a', encoding='utf-8') as f:
         print(dt, *args, file=f, **kwargs)
-
-
-secret_key = "taojianping hen NB"
-
-

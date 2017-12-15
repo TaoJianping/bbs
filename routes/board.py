@@ -5,12 +5,11 @@ from flask import (
     session,
     url_for,
     Blueprint,
-    make_response,
 )
 
 from models.user import User
 from models.board import Board
-from .topic import admin_require
+from .bbs import admin_require
 
 main = Blueprint("board", __name__)
 
@@ -26,7 +25,7 @@ def current_user():
 def board():
     u = current_user()
     if u == None:
-        redirect(url_for("topic.index"))
+        redirect(url_for("bbs.index"))
     else:
         return render_template("BBS/board.html")
     
@@ -36,4 +35,4 @@ def board():
 def add():
     form = request.form
     reply = Board.new(form)
-    return redirect( url_for("topic.index"))
+    return redirect( url_for("bbs.index"))

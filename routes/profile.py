@@ -15,8 +15,8 @@ from werkzeug import secure_filename
 from utils import log   
 
 from models.user import User
-from routes.topic import current_user
-from routes.topic import login_require
+from routes.bbs import current_user
+from .bbs import login_require
 from config import accept_user_file_type
 from config import folder_image_name
 

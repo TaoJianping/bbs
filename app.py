@@ -1,10 +1,13 @@
 from flask import Flask
-from utils import secret_key
-from routes.login import main as login
-from routes.topic import main as topic
+from config import secret_key
+from routes.bbs import main as bbs
 from routes.reply import main as reply
 from routes.board import main as board
 from routes.profile import main as profile
+from routes.topic import main as topic
+from routes.login import main as login
+
+
 
 
 
@@ -26,10 +29,12 @@ app.secret_key = secret_key
 # 注册蓝图
 # 有一个 url_prefix 可以用来给蓝图中的每个路由加一个前缀
 app.register_blueprint(login, url_prefix="/login")
-app.register_blueprint(topic)
+app.register_blueprint(bbs)
 app.register_blueprint(reply, url_prefix="/reply")
 app.register_blueprint(board, url_prefix="/board")
 app.register_blueprint(profile, url_prefix="/profile")
+app.register_blueprint(topic, url_prefix="/topic")
+
 
 
 
