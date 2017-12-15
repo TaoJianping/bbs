@@ -1,34 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">        
+    <link href="https://cdn.bootcss.com/bootstrap-material-design/4.0.2/bootstrap-material-design.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../static/css/MyCss.css">
+    <link rel="stylesheet" href="../../static/css/style.css" />
+    <link rel="stylesheet" href="../../static/css/editormd.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">    
     <title> {{ t.title }} </title>
 </head>
-<body>
-    <h1>文章</h1>
-    <div class="topic_detail">
-        <div class="topic_header"> {{ t.title }} </div>
-        <div class="topic_content"> {{ t.content }} </div>
-    </div>
-    <h1>回复</h1>
-    <div class="Reply_aera">
-        <div class="reply_all">
-            {% for r in replys %}
-            <div class="reply_item">
-                <p>第{{ loop.index }}楼 作者：{{r.get_replymaker()}}</p>
-                <p>{{ r.content }}</p>
+<body id="topic-detail">
+    <div class="board-topic-detail" id="board-topic-detail">
+        <h1>文章</h1>
+        <div class="topic_detail">
+            <div class="topic_header"> {{ t.title }} </div>
+            <div class="topic_content"> {{ t.content }} </div>
+        </div>
+        <h1>回复</h1>
+        <div class="Reply_aera">
+            <div class="reply_all">
+                {% for r in replys %}
+                <div class="reply_item">
+                    <p>第{{ loop.index }}楼 作者：{{r.get_replymaker()}}</p>
+                    <p>{{ r.content }}</p>
+                </div>
+                {%endfor%}
             </div>
-            {%endfor%}
-        </div>
-        <div class="Reply_reply">
-            <form action= {{ url_for("reply.add")}} method="POST">
-            <input type="hidden" value= {{ t._id }} name="topic_id">
-            <textarea name="content" cols="30" rows="10" placeholder="请输入评论"></textarea>
-            <button>提交</button>
-            </form>
+            <div class="Reply_reply">
+                <form action= {{ url_for("reply.add")}} method="POST">
+                <input type="hidden" value= {{ t._id }} name="topic_id">
+                <textarea name="content" cols="30" rows="10" placeholder="请输入评论"></textarea>
+                <button>提交</button>
+                </form>
+            </div>
         </div>
     </div>
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
+    <script src="../../static/js/editormd.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap-material-design/4.0.2/bootstrap-material-design.iife.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap-material-design/4.0.2/bootstrap-material-design.umd.js"></script>
+    <script type="text/javascript">
+        var testEditor;
+        $(function() {
+            testEditor = editormd("test-editormd", {
+                width   : "90%",
+                height  : 640,
+                syncScrolling : "single",
+                path    : "../../static/lib/",
+                emoji : true,
+                saveHTMLToTextarea : true,
+            });
+        });
+    </script>
 </body>
 </html>

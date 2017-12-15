@@ -82,7 +82,7 @@
 }
 
 .profile-body {
-    background-image: url("../image/profilebackground.jpg");
+    background-image: url("../images/profilebackground.jpg");
     background-attachment: fixed;
     background-size: cover;
 }
@@ -187,7 +187,7 @@ small#headHelp {
 }
 
 body#topic-write {
-    background-image: url("../image/topicnewbackground.jpg");
+    background-image: url("../images/topicnewbackground.jpg");
     background-attachment: fixed;
     background-size: cover;
 }
@@ -230,4 +230,19 @@ body#topic-write {
 
 #topic-button button {
     display: inline-block;
+}
+
+#topic-detail {
+    background-image: url("../images/topicdetaibackground.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+#board-topic-detail {
+    background-color: white;
+    margin-top: 5%;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: 5%;
+    padding: 10px;
 }

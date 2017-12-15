@@ -2,10 +2,42 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="de652a76-b034-4978-8ef1-844f47169492" name="Default" comment="">
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/image/loading.gif" afterPath="$PROJECT_DIR$/static/images/loading.gif" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/image/loading@2x.gif" afterPath="$PROJECT_DIR$/static/images/loading@2x.gif" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/image/loading@3x.gif" afterPath="$PROJECT_DIR$/static/images/loading@3x.gif" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/image/loginbackground.jpg" afterPath="$PROJECT_DIR$/static/images/loginbackground.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/image/logos/editormd-favicon-16x16.ico" afterPath="$PROJECT_DIR$/static/images/logos/editormd-favicon-16x16.ico" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/image/logos/editormd-favicon-24x24.ico" afterPath="$PROJECT_DIR$/static/images/logos/editormd-favicon-24x24.ico" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/image/logos/editormd-favicon-32x32.ico" afterPath="$PROJECT_DIR$/static/images/logos/editormd-favicon-32x32.ico" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/image/logos/editormd-favicon-48x48.ico" afterPath="$PROJECT_DIR$/static/images/logos/editormd-favicon-48x48.ico" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/image/logos/editormd-favicon-64x64.ico" afterPath="$PROJECT_DIR$/static/images/logos/editormd-favicon-64x64.ico" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/image/logos/editormd-logo-114x114.png" afterPath="$PROJECT_DIR$/static/images/logos/editormd-logo-114x114.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/image/logos/editormd-logo-120x120.png" afterPath="$PROJECT_DIR$/static/images/logos/editormd-logo-120x120.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/image/logos/editormd-logo-144x144.png" afterPath="$PROJECT_DIR$/static/images/logos/editormd-logo-144x144.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/image/logos/editormd-logo-16x16.png" afterPath="$PROJECT_DIR$/static/images/logos/editormd-logo-16x16.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/image/logos/editormd-logo-180x180.png" afterPath="$PROJECT_DIR$/static/images/logos/editormd-logo-180x180.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/image/logos/editormd-logo-240x240.png" afterPath="$PROJECT_DIR$/static/images/logos/editormd-logo-240x240.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/image/logos/editormd-logo-24x24.png" afterPath="$PROJECT_DIR$/static/images/logos/editormd-logo-24x24.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/image/logos/editormd-logo-320x320.png" afterPath="$PROJECT_DIR$/static/images/logos/editormd-logo-320x320.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/image/logos/editormd-logo-32x32.png" afterPath="$PROJECT_DIR$/static/images/logos/editormd-logo-32x32.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/image/logos/editormd-logo-48x48.png" afterPath="$PROJECT_DIR$/static/images/logos/editormd-logo-48x48.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/image/logos/editormd-logo-57x57.png" afterPath="$PROJECT_DIR$/static/images/logos/editormd-logo-57x57.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/image/logos/editormd-logo-64x64.png" afterPath="$PROJECT_DIR$/static/images/logos/editormd-logo-64x64.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/image/logos/editormd-logo-72x72.png" afterPath="$PROJECT_DIR$/static/images/logos/editormd-logo-72x72.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/image/logos/editormd-logo-96x96.png" afterPath="$PROJECT_DIR$/static/images/logos/editormd-logo-96x96.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/image/logos/vi.png" afterPath="$PROJECT_DIR$/static/images/logos/vi.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/image/profile.jpg" afterPath="$PROJECT_DIR$/static/images/profile.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/image/profilebackground.jpg" afterPath="$PROJECT_DIR$/static/images/profilebackground.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/image/registerbackground.jpg" afterPath="$PROJECT_DIR$/static/images/registerbackground.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/static/image/topicnewbackground.jpg" afterPath="$PROJECT_DIR$/static/images/topicnewbackground.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/log.txt" afterPath="$PROJECT_DIR$/log.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/reply.py" afterPath="$PROJECT_DIR$/routes/reply.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/topic.py" afterPath="$PROJECT_DIR$/routes/topic.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/css/MyCss.css" afterPath="$PROJECT_DIR$/static/css/MyCss.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/BBS/bbs.html" afterPath="$PROJECT_DIR$/templates/BBS/bbs.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/BBS/topic_write.html" afterPath="$PROJECT_DIR$/templates/BBS/topic_write.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/css/login.css" afterPath="$PROJECT_DIR$/static/css/login.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/css/register.css" afterPath="$PROJECT_DIR$/static/css/register.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/BBS/topic_detail.html" afterPath="$PROJECT_DIR$/templates/BBS/topic_detail.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -34,7 +66,8 @@
               <caret line="25" column="21" lean-forward="false" selection-start-line="25" selection-start-column="21" selection-end-line="25" selection-end-column="21" />
               <folding>
                 <element signature="e#0#16#0" expanded="true" />
-                <marker date="1513317399000" expanded="true" signature="1828:1917" ph="..." />
+                <marker date="1513344907000" expanded="true" signature="404:496" ph="..." />
+                <marker date="1513344907000" expanded="true" signature="1828:1917" ph="..." />
               </folding>
             </state>
           </provider>
@@ -43,7 +76,7 @@
       <file leaf-file-name="topic.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/routes/topic.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="197">
+            <state relative-caret-position="189">
               <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
               <folding>
                 <element signature="e#0#110#0" expanded="true" />
@@ -232,6 +265,20 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web15" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web15" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="routes" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -381,9 +428,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="28" width="1920" height="1172" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25104168" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25104168" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.37251183" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -517,7 +563,7 @@
         <state relative-caret-position="324">
           <caret line="24" column="14" lean-forward="false" selection-start-line="24" selection-start-column="14" selection-end-line="24" selection-end-column="14" />
           <folding>
-            <element signature="e#0#129#0" expanded="true" />
+            <element signature="e#0#129#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -528,7 +574,8 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#16#0" expanded="true" />
-            <marker date="1513317399000" expanded="true" signature="1828:1917" ph="..." />
+            <marker date="1513344907000" expanded="true" signature="404:496" ph="..." />
+            <marker date="1513344907000" expanded="true" signature="1828:1917" ph="..." />
           </folding>
         </state>
       </provider>
@@ -591,7 +638,7 @@
         <state relative-caret-position="324">
           <caret line="24" column="14" lean-forward="false" selection-start-line="24" selection-start-column="14" selection-end-line="24" selection-end-column="14" />
           <folding>
-            <element signature="e#0#129#0" expanded="true" />
+            <element signature="e#0#129#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -602,7 +649,8 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#16#0" expanded="true" />
-            <marker date="1513317399000" expanded="true" signature="1828:1917" ph="..." />
+            <marker date="1513344907000" expanded="true" signature="404:496" ph="..." />
+            <marker date="1513344907000" expanded="true" signature="1828:1917" ph="..." />
           </folding>
         </state>
       </provider>
@@ -657,7 +705,7 @@
         <state relative-caret-position="324">
           <caret line="24" column="14" lean-forward="false" selection-start-line="24" selection-start-column="14" selection-end-line="24" selection-end-column="14" />
           <folding>
-            <element signature="e#0#129#0" expanded="true" />
+            <element signature="e#0#129#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -668,7 +716,8 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#16#0" expanded="true" />
-            <marker date="1513317399000" expanded="true" signature="1828:1917" ph="..." />
+            <marker date="1513344907000" expanded="true" signature="404:496" ph="..." />
+            <marker date="1513344907000" expanded="true" signature="1828:1917" ph="..." />
           </folding>
         </state>
       </provider>
@@ -731,7 +780,7 @@
         <state relative-caret-position="324">
           <caret line="24" column="14" lean-forward="false" selection-start-line="24" selection-start-column="14" selection-end-line="24" selection-end-column="14" />
           <folding>
-            <element signature="e#0#129#0" expanded="true" />
+            <element signature="e#0#129#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -742,7 +791,8 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#16#0" expanded="true" />
-            <marker date="1513317399000" expanded="true" signature="1828:1917" ph="..." />
+            <marker date="1513344907000" expanded="true" signature="404:496" ph="..." />
+            <marker date="1513344907000" expanded="true" signature="1828:1917" ph="..." />
           </folding>
         </state>
       </provider>
@@ -768,7 +818,7 @@
         <state relative-caret-position="324">
           <caret line="24" column="14" lean-forward="false" selection-start-line="24" selection-start-column="14" selection-end-line="24" selection-end-column="14" />
           <folding>
-            <element signature="e#0#129#0" expanded="true" />
+            <element signature="e#0#129#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -779,7 +829,8 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#16#0" expanded="true" />
-            <marker date="1513317399000" expanded="true" signature="1828:1917" ph="..." />
+            <marker date="1513344907000" expanded="true" signature="404:496" ph="..." />
+            <marker date="1513344907000" expanded="true" signature="1828:1917" ph="..." />
           </folding>
         </state>
       </provider>
@@ -797,7 +848,7 @@
         <state relative-caret-position="360">
           <caret line="24" column="14" lean-forward="false" selection-start-line="24" selection-start-column="14" selection-end-line="24" selection-end-column="14" />
           <folding>
-            <element signature="e#0#129#0" expanded="true" />
+            <element signature="e#0#129#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -808,7 +859,8 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#16#0" expanded="true" />
-            <marker date="1513317399000" expanded="true" signature="1828:1917" ph="..." />
+            <marker date="1513344907000" expanded="true" signature="404:496" ph="..." />
+            <marker date="1513344907000" expanded="true" signature="1828:1917" ph="..." />
           </folding>
         </state>
       </provider>
@@ -818,7 +870,7 @@
         <state relative-caret-position="324">
           <caret line="24" column="14" lean-forward="false" selection-start-line="24" selection-start-column="14" selection-end-line="24" selection-end-column="14" />
           <folding>
-            <element signature="e#0#129#0" expanded="true" />
+            <element signature="e#0#129#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -933,7 +985,8 @@
           <caret line="25" column="21" lean-forward="false" selection-start-line="25" selection-start-column="21" selection-end-line="25" selection-end-column="21" />
           <folding>
             <element signature="e#0#16#0" expanded="true" />
-            <marker date="1513317399000" expanded="true" signature="1828:1917" ph="..." />
+            <marker date="1513344907000" expanded="true" signature="404:496" ph="..." />
+            <marker date="1513344907000" expanded="true" signature="1828:1917" ph="..." />
           </folding>
         </state>
       </provider>
@@ -948,7 +1001,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/topic.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="197">
+        <state relative-caret-position="189">
           <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
           <folding>
             <element signature="e#0#110#0" expanded="true" />

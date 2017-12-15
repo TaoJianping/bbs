@@ -174,3 +174,236 @@ ct: (1511952951)
 _id: (5a1e9237fe3d2659def8f88f) 
 >
 
+19:13:37 kwargs是: {'board_id': ObjectId('5a1e92bcfe3d2661af6c10e5')}
+19:13:37 data返回的数据是： [{'board_id': ObjectId('5a1e92bcfe3d2661af6c10e5'), 'view': 0, 'user_id': ObjectId('5a228469fe3d261eeb4a9911'), 'id': None, 'ct': 1512980670, 'title': '1231', 'content': '111', '_id': ObjectId('5a2e40befe3d264f384f45b2')}]
+21:24:42 kwargs是: {}
+21:24:42 data返回的数据是： [{'board_id': ObjectId('5a1e9237fe3d2659def8f88f'), 'view': 0, 'user_id': ObjectId('5a228469fe3d261eeb4a9911'), 'id': None, 'ct': 1512964005, 'title': '111', '_id': ObjectId('5a2dffa5fe3d260b99596cb8'), 'content': '111'}, {'board_id': ObjectId('5a1e9237fe3d2659def8f88f'), 'view': 0, 'user_id': ObjectId('5a228469fe3d261eeb4a9911'), 'id': None, 'ct': 1512964001, 'title': '111', '_id': ObjectId('5a2dffa1fe3d260b99596c98'), 'content': '1111'}, {'board_id': ObjectId('5a1e9237fe3d2659def8f88f'), 'view': 1, 'user_id': ObjectId('5a228469fe3d261eeb4a9911'), 'id': None, 'ct': 1512963998, 'title': '111', 'content': '1111', '_id': ObjectId('5a2dff9efe3d260b99596c79')}, {'board_id': ObjectId('5a1e9237fe3d2659def8f88f'), 'view': 0, 'user_id': ObjectId('5a228469fe3d261eeb4a9911'), 'id': None, 'ct': 1512963993, 'title': '111', '_id': ObjectId('5a2dff99fe3d260b99596c5b'), 'content': '1111'}, {'board_id': ObjectId('5a1e9237fe3d2659def8f88f'), 'view': 0, 'user_id': ObjectId('5a228469fe3d261eeb4a9911'), 'id': None, 'ct': 1512963989, 'title': '111', '_id': ObjectId('5a2dff95fe3d260b99596c3e'), 'content': '1111'}, {'board_id': ObjectId('5a1e9237fe3d2659def8f88f'), 'view': 0, 'user_id': ObjectId('5a228469fe3d261eeb4a9911'), 'id': None, 'ct': 1512963985, 'title': '111', '_id': ObjectId('5a2dff91fe3d260b99596c22'), 'content': '1111'}, {'board_id': ObjectId('5a1e9237fe3d2659def8f88f'), 'content': '111', 'user_id': ObjectId('5a228469fe3d261eeb4a9911'), 'id': None, 'view': 3, 'title': '111', '_id': ObjectId('5a2382a1fe3d261dbd3c721f'), 'ct': 1512276641}]
+21:24:45 kwargs是: {}
+21:24:45 data返回的数据是： [{'board_id': ObjectId('5a1e92bcfe3d2661af6c10e5'), 'view': 0, 'user_id': ObjectId('5a228469fe3d261eeb4a9911'), 'id': None, 'ct': 1512980788, 'title': '4', 'content': '4', '_id': ObjectId('5a2e4134fe3d264f384f4674')}, {'board_id': ObjectId('5a1e92bcfe3d2661af6c10e5'), 'view': 0, 'user_id': ObjectId('5a228469fe3d261eeb4a9911'), 'id': None, 'ct': 1512980702, 'title': '3', 'content': '4', '_id': ObjectId('5a2e40defe3d264f384f464a')}, {'board_id': ObjectId('5a1e9237fe3d2659def8f88f'), 'view': 0, 'user_id': ObjectId('5a228469fe3d261eeb4a9911'), 'id': None, 'ct': 1512980675, 'title': '2', 'content': '3', '_id': ObjectId('5a2e40c3fe3d264f384f45d8')}, {'board_id': ObjectId('5a1e92bcfe3d2661af6c10e5'), 'view': 0, 'user_id': ObjectId('5a228469fe3d261eeb4a9911'), 'id': None, 'ct': 1512980670, 'title': '1231', 'content': '111', '_id': ObjectId('5a2e40befe3d264f384f45b2')}, {'board_id': ObjectId('5a1e9237fe3d2659def8f88f'), 'view': 0, 'user_id': ObjectId('5a228469fe3d261eeb4a9911'), 'id': None, 'ct': 1512967345, 'title': '3333', '_id': ObjectId('5a2e0cb1fe3d260b99596d8a'), 'content': '3333'}, {'board_id': ObjectId('5a1e9237fe3d2659def8f88f'), 'view': 0, 'user_id': ObjectId('5a228469fe3d261eeb4a9911'), 'id': None, 'ct': 1512967339, 'title': '2222', '_id': ObjectId('5a2e0cabfe3d260b99596d67'), 'content': '2222'}, {'board_id': ObjectId('5a1e9237fe3d2659def8f88f'), 'view': 0, 'user_id': ObjectId('5a228469fe3d261eeb4a9911'), 'id': None, 'ct': 1512967335, 'title': '1111', '_id': ObjectId('5a2e0ca7fe3d260b99596d45'), 'content': '1111'}]
+21:24:46 kwargs是: {}
+21:24:46 data返回的数据是： [{'board_id': ObjectId('5a1e9237fe3d2659def8f88f'), 'content': '1', 'view': 0, 'id': None, 'user_id': ObjectId('5a228469fe3d261eeb4a9911'), 'title': '1', '_id': ObjectId('5a2e5c3afe3d262dd9c1ae12'), 'ct': 1512987706}, {'board_id': ObjectId('5a1e92bcfe3d2661af6c10e5'), 'view': 0, 'user_id': ObjectId('5a228469fe3d261eeb4a9911'), 'id': None, 'ct': 1512980855, 'title': '8', 'content': '8', '_id': ObjectId('5a2e4177fe3d264f384f4789')}, {'board_id': ObjectId('5a1e9237fe3d2659def8f88f'), 'view': 0, 'user_id': ObjectId('5a228469fe3d261eeb4a9911'), 'id': None, 'ct': 1512980841, 'title': '66666', 'content': '6666666', '_id': ObjectId('5a2e4169fe3d264f384f4754')}, {'board_id': ObjectId('5a1e92bcfe3d2661af6c10e5'), 'view': 0, 'user_id': ObjectId('5a228469fe3d261eeb4a9911'), 'id': None, 'ct': 1512980833, 'title': '67', 'content': '777', '_id': ObjectId('5a2e4161fe3d264f384f4727')}, {'board_id': ObjectId('5a1e92bcfe3d2661af6c10e5'), 'view': 0, 'user_id': ObjectId('5a228469fe3d261eeb4a9911'), 'id': None, 'ct': 1512980824, 'title': '7', 'content': '7', '_id': ObjectId('5a2e4158fe3d264f384f46f5')}, {'board_id': ObjectId('5a1e92bcfe3d2661af6c10e5'), 'view': 0, 'user_id': ObjectId('5a228469fe3d261eeb4a9911'), 'id': None, 'ct': 1512980816, 'title': '5', 'content': '6', '_id': ObjectId('5a2e4150fe3d264f384f46ca')}, {'board_id': ObjectId('5a1e92bcfe3d2661af6c10e5'), 'view': 0, 'user_id': ObjectId('5a228469fe3d261eeb4a9911'), 'id': None, 'ct': 1512980795, 'title': '5', 'content': '5', '_id': ObjectId('5a2e413bfe3d264f384f46a0')}]
+21:24:49 kwargs是: {}
+21:24:49 data返回的数据是： [{'board_id': ObjectId('5a1e92d0fe3d2661af6c10e6'), 'view': 3, 'user_id': ObjectId('5a228469fe3d261eeb4a9911'), 'id': None, 'ct': 1512223816, 'title': '11111', 'content': '1111', '_id': ObjectId('5a22b448fe3d265d0df3f317')}, {'board_id': ObjectId('5a1e9237fe3d2659def8f88f'), 'view': 8, 'user_id': ObjectId('5a229417fe3d2636f3b2b1f0'), 'id': None, 'ct': 1512216012, 'title': '111', 'content': '1111', '_id': ObjectId('5a2295ccfe3d2638c7789d7a')}, {'board_id': ObjectId('5a1e9237fe3d2659def8f88f'), 'view': 68, 'user_id': ObjectId('5a229417fe3d2636f3b2b1f0'), 'id': None, 'ct': 1512215583, 'title': '111111111111', '_id': ObjectId('5a22941ffe3d2636f3b2b1f1'), 'content': '111111111111111111'}]
+21:27:19 <SecureCookieSession {'email': 'tjp563613470@live.com'}>
+21:30:53 the email of user is: tjp563613470@live.com
+21:31:41 the email of user is: tjp563613470@live.com
+21:31:41 the user is: < User
+username: (Eric)
+_id: (5a30ef27fe3d265dca1e0011)
+id: (None)
+email: (tjp563613470@live.com)
+user_image: (1.jpg)
+address: (上海市)
+password: (bea4cb626d4b179a246a62b8b6203e369ca9bc79)
+nation: (America)
+level: (1) 
+>
+
+21:32:11 the email of user is: tjp563613470@live.com
+21:32:11 the user is: < User
+username: (Eric)
+_id: (5a30ef27fe3d265dca1e0011)
+id: (None)
+email: (tjp563613470@live.com)
+user_image: (1.jpg)
+address: (上海市)
+password: (bea4cb626d4b179a246a62b8b6203e369ca9bc79)
+nation: (America)
+level: (1) 
+>
+
+21:33:39 the email of user is: tjp563613470@live.com
+21:33:39 the user is: < User
+id: (None)
+address: (上海市)
+password: (bea4cb626d4b179a246a62b8b6203e369ca9bc79)
+email: (tjp563613470@live.com)
+nation: (America)
+level: (1)
+_id: (5a30ef27fe3d265dca1e0011)
+user_image: (1.jpg)
+username: (Eric) 
+>
+
+21:34:20 the email of user is: tjp563613470@live.com
+21:34:20 the user is: < User
+user_image: (1.jpg)
+level: (1)
+nation: (America)
+username: (Eric)
+email: (tjp563613470@live.com)
+password: (bea4cb626d4b179a246a62b8b6203e369ca9bc79)
+_id: (5a30ef27fe3d265dca1e0011)
+address: (上海市)
+id: (None) 
+>
+
+21:34:20 the email of user is: tjp563613470@live.com
+21:34:20 the user is: < User
+user_image: (1.jpg)
+level: (1)
+nation: (America)
+username: (Eric)
+email: (tjp563613470@live.com)
+password: (bea4cb626d4b179a246a62b8b6203e369ca9bc79)
+_id: (5a30ef27fe3d265dca1e0011)
+address: (上海市)
+id: (None) 
+>
+
+21:34:22 the email of user is: tjp563613470@live.com
+21:34:22 the user is: < User
+user_image: (1.jpg)
+level: (1)
+nation: (America)
+username: (Eric)
+email: (tjp563613470@live.com)
+password: (bea4cb626d4b179a246a62b8b6203e369ca9bc79)
+_id: (5a30ef27fe3d265dca1e0011)
+address: (上海市)
+id: (None) 
+>
+
+21:34:22 the email of user is: tjp563613470@live.com
+21:34:22 the user is: < User
+user_image: (1.jpg)
+level: (1)
+nation: (America)
+username: (Eric)
+email: (tjp563613470@live.com)
+password: (bea4cb626d4b179a246a62b8b6203e369ca9bc79)
+_id: (5a30ef27fe3d265dca1e0011)
+address: (上海市)
+id: (None) 
+>
+
+21:34:23 the email of user is: tjp563613470@live.com
+21:34:23 the user is: < User
+user_image: (1.jpg)
+level: (1)
+nation: (America)
+username: (Eric)
+email: (tjp563613470@live.com)
+password: (bea4cb626d4b179a246a62b8b6203e369ca9bc79)
+_id: (5a30ef27fe3d265dca1e0011)
+address: (上海市)
+id: (None) 
+>
+
+21:34:23 the email of user is: tjp563613470@live.com
+21:34:23 the user is: < User
+user_image: (1.jpg)
+level: (1)
+nation: (America)
+username: (Eric)
+email: (tjp563613470@live.com)
+password: (bea4cb626d4b179a246a62b8b6203e369ca9bc79)
+_id: (5a30ef27fe3d265dca1e0011)
+address: (上海市)
+id: (None) 
+>
+
+21:34:24 the email of user is: tjp563613470@live.com
+21:34:24 the user is: < User
+user_image: (1.jpg)
+level: (1)
+nation: (America)
+username: (Eric)
+email: (tjp563613470@live.com)
+password: (bea4cb626d4b179a246a62b8b6203e369ca9bc79)
+_id: (5a30ef27fe3d265dca1e0011)
+address: (上海市)
+id: (None) 
+>
+
+21:34:24 the email of user is: tjp563613470@live.com
+21:34:24 the user is: < User
+user_image: (1.jpg)
+level: (1)
+nation: (America)
+username: (Eric)
+email: (tjp563613470@live.com)
+password: (bea4cb626d4b179a246a62b8b6203e369ca9bc79)
+_id: (5a30ef27fe3d265dca1e0011)
+address: (上海市)
+id: (None) 
+>
+
+21:34:26 the email of user is: tjp563613470@live.com
+21:34:26 the user is: < User
+user_image: (1.jpg)
+level: (1)
+nation: (America)
+username: (Eric)
+email: (tjp563613470@live.com)
+password: (bea4cb626d4b179a246a62b8b6203e369ca9bc79)
+_id: (5a30ef27fe3d265dca1e0011)
+address: (上海市)
+id: (None) 
+>
+
+21:34:26 the email of user is: tjp563613470@live.com
+21:34:26 the user is: < User
+user_image: (1.jpg)
+level: (1)
+nation: (America)
+username: (Eric)
+email: (tjp563613470@live.com)
+password: (bea4cb626d4b179a246a62b8b6203e369ca9bc79)
+_id: (5a30ef27fe3d265dca1e0011)
+address: (上海市)
+id: (None) 
+>
+
+21:34:27 the email of user is: tjp563613470@live.com
+21:34:27 the user is: < User
+user_image: (1.jpg)
+level: (1)
+nation: (America)
+username: (Eric)
+email: (tjp563613470@live.com)
+password: (bea4cb626d4b179a246a62b8b6203e369ca9bc79)
+_id: (5a30ef27fe3d265dca1e0011)
+address: (上海市)
+id: (None) 
+>
+
+21:34:27 the email of user is: tjp563613470@live.com
+21:34:27 the user is: < User
+user_image: (1.jpg)
+level: (1)
+nation: (America)
+username: (Eric)
+email: (tjp563613470@live.com)
+password: (bea4cb626d4b179a246a62b8b6203e369ca9bc79)
+_id: (5a30ef27fe3d265dca1e0011)
+address: (上海市)
+id: (None) 
+>
+
+21:34:28 the email of user is: tjp563613470@live.com
+21:34:28 the user is: < User
+user_image: (1.jpg)
+level: (1)
+nation: (America)
+username: (Eric)
+email: (tjp563613470@live.com)
+password: (bea4cb626d4b179a246a62b8b6203e369ca9bc79)
+_id: (5a30ef27fe3d265dca1e0011)
+address: (上海市)
+id: (None) 
+>
+
+21:34:28 the email of user is: tjp563613470@live.com
+21:34:28 the user is: < User
+user_image: (1.jpg)
+level: (1)
+nation: (America)
+username: (Eric)
+email: (tjp563613470@live.com)
+password: (bea4cb626d4b179a246a62b8b6203e369ca9bc79)
+_id: (5a30ef27fe3d265dca1e0011)
+address: (上海市)
+id: (None) 
+>
+
