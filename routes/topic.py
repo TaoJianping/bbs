@@ -10,6 +10,8 @@ from flask import (
 from bson.objectid import ObjectId
 from models.topic import Topic
 from models.reply import Reply
+from models.board import Board
+
 
 from .bbs import login_require
 from .bbs import current_user
@@ -24,7 +26,11 @@ main = Blueprint("topic", __name__)
 @main.route("/write", methods=["GET"])
 @login_require
 def topic_write():
-    return render_template("BBS/topic_write.html")
+    """
+    发布新话题的文章页面，用来写新话题
+    """
+    boards = Board.find_all()
+    return render_template("BBS/topic_write.html", boards=boards)
 
 
 @main.route("/upload", methods=["post"])
@@ -32,6 +38,7 @@ def topic_write():
 def markdown_upload():
     log(request.form)
     return redirect(url_for('.markdown'))
+
 
 @main.route("/<topic_id>")
 def detail(topic_id):

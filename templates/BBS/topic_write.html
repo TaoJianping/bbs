@@ -2,32 +2,41 @@
 <html lang="zh">
     <head>
         <meta charset="utf-8" />
-        <title>Simple example - Editor.md examples</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">        
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">
+        <link href="https://cdn.bootcss.com/bootstrap-material-design/4.0.2/bootstrap-material-design.css" rel="stylesheet">
+        <link rel="stylesheet" href="../../static/css/MyCss.css">
         <link rel="stylesheet" href="../../static/css/style.css" />
         <link rel="stylesheet" href="../../static/css/editormd.css" />
+        <title>发布新话题</title>        
     </head>
-    <body>
-        <div id="layout">
-            <header>
-                <h1>Simple example</h1>
-            </header>
+    <body id="topic-write">
+        <div id="layout" class="board-topic">
             <form action="{{ url_for('topic.topic_write')}}" method="post">
-            <input type="text" name="title" placeholder="请输入标题">
-            <br>
-            <select name="board_id">
-                {% for b in board %}
-                <option value= {{ b._id }}> {{ b.board_name }}</option>
-                {% endfor %}
-            </select>        
-            <div id="test-editormd">
-                <textarea style="display:none;"></textarea>
-            </div>
-            <button type="submit">提交</button>
+                <div class="topic-title">
+                    <span>文章标题：</span>
+                    <input type="text" name="title" placeholder="  请输入标题">
+                </div>
+                <div class="topic-board">
+                <label for="board_id  FormCustomSelect" class="col-form-label">板块:</label>
+                <select name="board_id" class="custom-select mb-2 mr-sm-2 mb-sm-0" id="inlineFormCustomSelect">
+                        {% for b in boards %}
+                        <option value= {{ b._id }}> {{ b.board_name }}</option>
+                        {% endfor %}
+                </select> 
+                </div>
+                <div id="test-editormd">
+                    <textarea style="display:none;"></textarea>
+                </div>
+                <div id="topic-button">
+                    <button type="submit" class="btn btn-primary card topic-button">提交</button>                                        
+                </div>
             </form>
         </div>
-        <!-- <script src="../../static/js/jquery.min.js"></script> -->
         <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
         <script src="../../static/js/editormd.min.js"></script>
+        <script src="https://cdn.bootcss.com/bootstrap-material-design/4.0.2/bootstrap-material-design.iife.js"></script>
+        <script src="https://cdn.bootcss.com/bootstrap-material-design/4.0.2/bootstrap-material-design.umd.js"></script>
         <script type="text/javascript">
 			var testEditor;
             $(function() {

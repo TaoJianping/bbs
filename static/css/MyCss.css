@@ -186,6 +186,48 @@ small#headHelp {
     margin-bottom: 0px;
 }
 
-@media screen and (max-device-width:872px){
+body#topic-write {
+    background-image: url("../image/topicnewbackground.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+}
 
+.board-topic {
+    background-color: white;
+    margin-top: 5%;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: 5%;
+    padding: 10px;
+}
+
+#test-editormd {
+    margin: 10px auto;
+}
+
+.board-topic .topic-title {
+    margin: 0 5%;
+    font-size: 20px;
+    font-weight: 20px;
+}
+
+.board-topic label {
+    margin-left: 5%；
+}
+
+.btn.btn-primary.card.topic-button {
+    border: 0;
+}
+
+.topic-board {
+    margin-left: 5%;
+    margin-top: 10px;
+}
+
+#topic-button {
+    text-align: center;    
+}
+
+#topic-button button {
+    display: inline-block;
 }
