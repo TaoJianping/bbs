@@ -207,7 +207,7 @@ body#topic-write {
 
 .board-topic .topic-title {
     margin: 0 5%;
-    font-size: 20px;
+    font-size: 30px;
     font-weight: 20px;
 }
 
@@ -232,10 +232,13 @@ body#topic-write {
     display: inline-block;
 }
 
-#topic-detail {
+body#topic-detail {
     background-image: url("../images/topicdetaibackground.jpg");
     background-attachment: fixed;
     background-size: cover;
+    text-align: left;
+    padding: 5%;
+    padding-top: 3%;
 }
 
 #board-topic-detail {
@@ -243,6 +246,69 @@ body#topic-write {
     margin-top: 5%;
     margin-left: 5%;
     margin-right: 5%;
-    margin-bottom: 5%;
     padding: 10px;
+}
+
+.topic-detail-side .topic_detail.card {
+    padding: 2%;
+}
+
+.topic_detail.card .topic_header {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+
+
+hr.style-four {
+    padding: 0 20px 0;
+    margin: 10px 0;
+    line-height: 1px;
+    border-left: 200px solid #ddd;
+    border-right: 200px solid #ddd;
+    text-align: center;
+}
+
+img.reply-user-image {
+
+}
+
+#topic-detail .Reply_aera.card {
+    padding: 2%;
+}
+
+.reply_item {
+    margin-bottom: 10px;
+}
+
+.reply_item img {
+    border-radius: 100%;
+    padding: 0;
+    float: left;
+    margin-right: 15px;
+    height: 60px;
+    width: 60px;
+}
+
+.reply_item .reply-writer-info {
+    margin-bottom: 10px;
+    font-size: 15px;
+    font-weight: 20px;
+}
+
+.reply_item .reply-content {
+    margin-top: 10px;
+    margin-bottom: 25px; 
+}
+
+.reply_item .reply-floor-info {
+    float: right;    
+}
+
+.reply_item ul {
+    display: inline-block;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
 }

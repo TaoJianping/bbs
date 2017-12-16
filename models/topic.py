@@ -8,7 +8,7 @@ import time
 class Topic(Model):
     def __init__(self, form, **kwargs):
         self.title = form.get("title", None)
-        self.content = form.get("content", None)
+        self.content = form.get("test-editormd-html-code", None)
         self.id = form.get("topic_id", None)
         self.ct = int(time.time())        
         self.view = 0

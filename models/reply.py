@@ -19,3 +19,7 @@ class Reply(Model):
         user = User.find_by(_id=self.author_id)
         return user.username
 
+    def get_replymaker_image(self):
+        user = User.find_by(_id=self.author_id)
+        return user.user_image
+

@@ -17,10 +17,11 @@ from .bbs import login_require
 from .bbs import current_user
 from utils import log
 
+import markdown
+
 
 
 main = Blueprint("topic", __name__)
-
 
 
 @main.route("/write", methods=["GET"])
@@ -35,9 +36,9 @@ def topic_write():
 
 @main.route("/upload", methods=["post"])
 @login_require
-def markdown_upload():
-    log(request.form)
-    return redirect(url_for('.detail'))
+def topic_upload():
+    Topic.new(request.form)
+    return redirect(url_for('bbs.index'))
 
 
 @main.route("/<topic_id>")
@@ -54,7 +55,6 @@ def detail(topic_id):
 def add():
     form = request.form
     user = current_user()
-    log("add函数这边的User是：", user)
     Topic.new(form, user_id=user._id)
     return redirect(url_for("topic.index"))
 

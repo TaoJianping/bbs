@@ -5,25 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">        
     <link href="https://cdn.bootcss.com/bootstrap-material-design/4.0.2/bootstrap-material-design.css" rel="stylesheet">
     <link rel="stylesheet" href="../../static/css/MyCss.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">    
     <link rel="stylesheet" href="../../static/css/style.css" />
     <link rel="stylesheet" href="../../static/css/editormd.css" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">    
     <title> {{ t.title }} </title>
 </head>
 <body id="topic-detail">
-    <div class="board-topic-detail" id="board-topic-detail">
-        <h1>文章</h1>
-        <div class="topic_detail">
-            <div class="topic_header"> {{ t.title }} </div>
-            <div class="topic_content"> {{ t.content }} </div>
-        </div>
-        <h1>回复</h1>
-        <div class="Reply_aera">
+    <div class="topic-detail-side col-md-9">
+        <div class="topic_detail card">
+                <div class="topic_header"> {{ t.title }} </div>
+                <div class="topic-info">
+                    ⏲️ 发布时间： {{ t.ct }} &nbsp; | &nbsp; 📝 回复： {{ t.get_replynumber() }} &nbsp; | &nbsp; 🕮 阅读： {{ t.view }} 
+                </div>
+                <hr class="style-four">
+                <div id="doc-content">
+                        <textarea style="display:none;"> {{ t.content }}</textarea>
+                    </div>
+            </div>
+        <div class="Reply_aera card">
             <div class="reply_all">
                 {% for r in replys %}
                 <div class="reply_item">
-                    <p>第{{ loop.index }}楼 作者：{{r.get_replymaker()}}</p>
-                    <p>{{ r.content }}</p>
+                        <img class="reply-user-image col-md-2" src= {{ url_for("static", filename= "user_image/" + r.get_replymaker_image() ) }} alt="您的头像" srcset=""/>
+                    <ul class="reply-info col-md-10">  
+                        <li>
+                            <span class="reply-writer-info"> {{r.get_replymaker()}} &nbsp; | &nbsp; {{ r.ct }}</span>
+                            <span class="reply-floor-info"> {{ loop.index }}楼 </span>
+                        </li>                                                          
+                        <li>
+                            <p class="reply-content">{{ r.content }}</p>                                
+                        </li>
+                    </ul>                                                                                                     
+                    <hr>
                 </div>
                 {%endfor%}
             </div>
@@ -32,14 +45,25 @@
                 <input type="hidden" value= {{ t._id }} name="topic_id">
                 <textarea name="content" cols="30" rows="10" placeholder="请输入评论"></textarea>
                 <button>提交</button>
-                </form>
+                </form>  
             </div>
         </div>
+        </div>
     </div>
+    <div class="topic-detail-other-side col-md-2">
+    
+    </div>          
     <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
-    <script src="../../static/js/editormd.min.js"></script>
     <script src="https://cdn.bootcss.com/bootstrap-material-design/4.0.2/bootstrap-material-design.iife.js"></script>
     <script src="https://cdn.bootcss.com/bootstrap-material-design/4.0.2/bootstrap-material-design.umd.js"></script>
+    <script src="../../static/js/editormd.min.js"></script>
+    <script src="../../static/lib/marked.min.js"></script>
+    <script src="../../static/lib/prettify.min.js"></script>
+    <script src="../../static/lib/raphael.min.js"></script>
+    <script src="../../static/lib/underscore.min.js"></script>
+    <script src="../../static/lib/sequence-diagram.min.js"></script>
+    <script src="../../static/lib/flowchart.min.js"></script>
+    <script src="../../static/lib/jquery.flowchart.min.js"></script>
     <script type="text/javascript">
         var testEditor;
         $(function() {
@@ -53,5 +77,18 @@
             });
         });
     </script>
+    <script type="text/javascript">
+        var testEditor;
+        $(function () {
+            testEditor = editormd.markdownToHTML("doc-content", {//注意：这里是上面DIV的id
+                htmlDecode: "style,script,iframe",
+                emoji: true,
+                taskList: true,
+                tex: true, // 默认不解析
+                flowChart: true, // 默认不解析
+                sequenceDiagram: true, // 默认不解析
+                codeFold: true,
+        });});
+     </script>
 </body>
 </html>
