@@ -1,7 +1,6 @@
 import hashlib
 
 from models import Model
-from utils import log
 
 class User(Model):
     def __init__(self, form):

@@ -48,7 +48,7 @@
             </a>
             <nav id="navbar-example3" class="navbar navbar-light bg-light">
               <nav class="nav nav-pills flex-column">
-                <a class="nav-link" href="#item-1">个人资料</a>
+                <a class="nav-link" href="{{ url_for('profile.index')}}">个人资料</a>
                 <a class="nav-link" href="#item-2">聊天室</a>
                 <a class="nav-link" href="#item-3">Item3</a>
               </nav>
@@ -60,17 +60,15 @@
                   <ul class="nav nav-pills card-header-pills nav-tabs">
                     {% for board in boards %}
                     <li class="nav-item">
-                    <a class="nav-link" href="/?board_id={{ board._id }}"> {{ board.board_name}} </a>
+                    <a class="nav-link" href="/{{ board._id }}?sort={{ sort }}"> {{ board.board_name}} </a>
                     </li>
                     {% endfor %}
                     <li class="nav-item dropdown">
                       <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Action</a>
                       <div class="dropdown-menu">
-                        <a class="dropdown-item" href="#">最新回复</a>
-                        <a class="dropdown-item" href="#">最新发布</a>
-                        <a class="dropdown-item" href="#">最热讨论</a>                        
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">关注此版块</a>
+                        <a class="dropdown-item" href="/{{ filter._id }}?sort=view">最热讨论</a>
+                        <a class="dropdown-item" href="/{{ filter._id }}?sort=ct">最新发布</a>
+                        <a class="dropdown-item" href="#">最新回复</a>                     
                       </div>
                     </li>
                   </ul>
@@ -92,7 +90,7 @@
                         <span class="page-link">Previous</span>
                       </li>
                       {% for i in range(pagenumber) %}
-                      <li class="page-item"><a class="page-link" href="?page={{ loop.index }}&board_id={{ filter._id }}"> {{ loop.index }} </a></li>
+                      <li class="page-item"><a class="page-link" href="{{ filter._id }}?page={{ loop.index }}&sort={{ sort }}"> {{ loop.index }} </a></li>
                       {% endfor %}
                       <li class="page-item">
                         <a class="page-link" href="#">Next</a>
@@ -106,7 +104,6 @@
         </div>
       </div>
       <div class="function-aera">
-          <a class="button-add-new-article" href="{{ url_for('topic.topic_write') }}">添加新文章</a>
           <a class="button-add-new-board" href={{ url_for("board.board") }}>增加板块</a>
           <a class="button-log-out" href={{ url_for("login.log_out") }}>退出登录</a>        
       </div>

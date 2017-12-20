@@ -52,6 +52,5 @@ def login():
 
 @main.route("/log_out", methods=["GET"])
 def log_out():
-    log(session)
     session.pop("username")
     return redirect(url_for("bbs.index"))

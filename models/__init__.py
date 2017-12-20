@@ -124,7 +124,7 @@ class Model(object):
         return None
 
     @classmethod
-    def find_byPage(cls, page=0, **kwargs):
+    def find_byPage(cls, page=0, sort_by=None, **kwargs):
         """
         根据给定的page和条件找到相应的topic
         ===
@@ -134,14 +134,12 @@ class Model(object):
             model: 通过找到的数据重构的一系列实例对象
         """
         if page == 0 or page == 1:
-            data = list(db[cls.__name__].find(kwargs).sort([("ct", -1)]).limit(7).skip(0))
+            data = list(db[cls.__name__].find(kwargs).sort([(sort_by, -1)]).limit(7).skip(0))
             if data is not None:
                 models = [cls._new_from_dict(m) for m in data]
                 return models
         else:
-            log("kwargs是:", kwargs)
-            data = list(db[cls.__name__].find(kwargs).sort([("ct", -1)]).limit(7).skip((page-1)*7))
-            log("data返回的数据是：", data)
+            data = list(db[cls.__name__].find(kwargs).sort([(sort_by, -1)]).limit(7).skip((page-1)*7))
             if data is not None:
                 models = [cls._new_from_dict(m) for m in data]
                 return models

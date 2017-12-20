@@ -23,9 +23,6 @@ from utils import log
 main = Blueprint("bbs", __name__)
 
 
-from utils import log
-
-
 def current_user():
     email = session.get("email", None)
     user = User.find_by(email=email)
@@ -55,24 +52,23 @@ def admin_require(func):
 
 
 @main.route("/", methods=["GET"])
-def index():
+@main.route("/<string:board_id>", methods=["GET"])
+def index(board_id=None):
     boards = Board.all()
-    board_id = request.args.get("board_id", None)
-    board = Board.find_by(_id=ObjectId(board_id))
     page = int(request.args.get("page", 0))
-    if (board_id == "5a1e9237fe3d2659def8f88f") or (board_id is None):
-        topic_number = Topic.get_collection_number()
-        page_number = math.ceil(topic_number/7)
-        ms = Topic.find_byPage(page)
+    sort = request.args.get("sort", "ct")
+    if (board_id is None) or (board_id == "5a1e9237fe3d2659def8f88f"):
+        page_number = Topic.get_page_number()
+        board = Board.find_by(_id=ObjectId("5a1e9237fe3d2659def8f88f"))  
+        ms = Topic.find_byPage(page, sort)
     else:
-        topic_number = Topic.get_collection_number(board_id=ObjectId(board_id))
-        page_number = math.ceil(topic_number/7)
-        ms = Topic.find_byPage(page, board_id=ObjectId(board_id))
-    return render_template("BBS/bbs.html", ms=ms, boards=boards, filter=board, pagenumber=page_number)
+        page_number = Topic.get_page_number(board_id)
+        board = Board.find_by(_id=ObjectId(board_id))
+        ms = Topic.find_byPage(page, sort, board_id=ObjectId(board_id))
+    return render_template("BBS/bbs.html", ms=ms, boards=boards, filter=board, pagenumber=page_number, sort=sort)
 
 
 @main.route("/log_out", methods=["GET"])
 def log_out():
-    log(session)
     session.pop("username")
     return redirect(url_for("topic.index"))
