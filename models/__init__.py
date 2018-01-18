@@ -203,3 +203,7 @@ class Model(object):
         # 所以要把这个"_id"删除, 不然JSON无法保存
         # m.__dict__.pop("_id")
         # 忽然发现__dict__函数就可以操作他的所有属性
+
+    def to_time(self):
+        return time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(self.ct))
+        

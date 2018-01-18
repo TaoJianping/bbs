@@ -6,6 +6,7 @@ from routes.board import main as board
 from routes.profile import main as profile
 from routes.topic import main as topic
 from routes.login import main as login
+from routes.inbox import main as inbox
 
 
 
@@ -34,6 +35,7 @@ app.register_blueprint(reply, url_prefix="/reply")
 app.register_blueprint(board, url_prefix="/board")
 app.register_blueprint(profile, url_prefix="/profile")
 app.register_blueprint(topic, url_prefix="/topic")
+app.register_blueprint(inbox, url_prefix="/inbox")
 
 
 

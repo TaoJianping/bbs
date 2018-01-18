@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Material Design for Bootstrap fonts and icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">
+
+    <!-- Material Design for Bootstrap CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.0.0-beta.4/dist/css/bootstrap-material-design.min.css" integrity="sha384-R80DC0KVBO4GSTw+wZ5x2zn2pu4POSErBkf8/fSFhPXHxvHJydT0CSgAP2Yo2r4I" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="../../static/css/MyCss.css">
+    <title>私信</title>
+</head>
+<body>
+    <div class="inbox-area">
+        <div class="list-group inbox-item-list-group card">
+                <nav class="navbar navbar-light bg-light">
+                        <a class="navbar-brand" href="#">Inbox</a>
+                      </nav>
+            {% for i in inbox_items %}        
+                <a href="{{ url_for('inbox.inbox_detail', inbox_id=i._id)}}" class="list-group-item list-group-item-action flex-column align-items-start">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">{{i.dialogue[-1]["sender"]}}:</h5>
+                    <small>
+                        {% if user.email in i.unmarked %}
+                            未读
+                        {% else %}
+                            已读
+                        {% endif %}
+                    </small>
+                </div>
+                <p class="mb-1">{{i.dialogue[-1]["content"]}}</p>
+                <small>{{ i.to_time() }}</small>
+                </a>
+            {% endfor %}    
+        </div>
+        <div class="inbox-item-detail card">
+            <div class="card-header">
+                {% if user.email==inbox_item.players[0] %}
+                    {{ inbox_item.players[1] }}                  
+                {% else %}
+                    {{ inbox_item.players[0] }}                  
+                {% endif %}
+            </div>
+            <div class="card-body">
+                {% for i in inbox_item.dialogue %}                            
+                {% if user.email==i["sender"] %}
+                    <blockquote class="blockquote xxx iamowner">
+                    <p>{{ i["content"] }} </p>
+                    <footer class="blockquote-footer">{{ inbox_item.dialogue_time(i["ct"])}} by <cite title="Source Title">{{ i["sender"] }}</cite></footer>
+                    </blockquote>                 
+                {% else %}
+                    <blockquote class="blockquote">
+                    <p>{{ i["content"] }} </p>
+                    <footer class="blockquote-footer">{{ inbox_item.dialogue_time(i["ct"])}} <cite title="Source Title">{{ i["sender"] }}</cite></footer>
+                    </blockquote>              
+                {% endif %}
+                {% endfor %}
+            </div>
+            <form class="inbox-item-upload-form" method="POST" action="{{ url_for('inbox.inbox_detail', inbox_id=inbox_item._id) }}">
+                <div class="form-group">
+                    <label class="form-control-label" for="formGroupExampleInput2">Message</label>
+                    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Send Your Message" name="inbox-dialogue">
+                    <button type="submit" class="btn btn-primary card">Send</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
+    <script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js" integrity="sha384-fA23ZRQ3G/J53mElWqVJEGJzU0sTs+SvzG8fXVWP+kJQ1lwFAOkcUOysnlKJC33U" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/bootstrap-material-design@4.0.0-beta.4/dist/js/bootstrap-material-design.js" integrity="sha384-3xciOSDAlaXneEmyOo0ME/2grfpqzhhTcM4cE32Ce9+8DW/04AGoTACzQpphYGYe" crossorigin="anonymous"></script>
+    <script>$(document).ready(function() { $('body').bootstrapMaterialDesign(); });</script>
+</body>
+</html>

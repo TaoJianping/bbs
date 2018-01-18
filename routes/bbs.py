@@ -52,7 +52,7 @@ def admin_require(func):
 
 
 @main.route("/", methods=["GET"])
-@main.route("/<string:board_id>", methods=["GET"])
+@main.route("/<string:board_id>/", methods=["GET"])
 def index(board_id=None):
     boards = Board.all()
     page = int(request.args.get("page", 0))
@@ -62,10 +62,13 @@ def index(board_id=None):
         board = Board.find_by(_id=ObjectId("5a1e9237fe3d2659def8f88f"))  
         ms = Topic.find_byPage(page, sort)
     else:
-        page_number = Topic.get_page_number(board_id)
-        board = Board.find_by(_id=ObjectId(board_id))
-        ms = Topic.find_byPage(page, sort, board_id=ObjectId(board_id))
-    return render_template("BBS/bbs.html", ms=ms, boards=boards, filter=board, pagenumber=page_number, sort=sort)
+        if len(board_id) < 12:
+            pass
+        else:
+            page_number = Topic.get_page_number(board_id)
+            board = Board.find_by(_id=ObjectId(board_id))
+            ms = Topic.find_byPage(page, sort, board_id=ObjectId(board_id))
+    return render_template("BBS/bbs.html",filter=board, pagenumber=page_number, sort=sort, ms=ms, boards=boards)
 
 
 @main.route("/log_out", methods=["GET"])

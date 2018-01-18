@@ -312,3 +312,134 @@ img.reply-user-image {
     padding: 0;
     width: 100%;
 }
+
+.inbox-area {
+    display: flex;
+    margin-top: 20px;
+}
+
+.list-group.inbox-item-list-group {
+    flex: 0.25;
+    margin-left: 10px;
+    margin-right: 10px;    
+}
+
+.inbox-item-detail {
+
+}
+
+.inbox-item-detail {
+    flex: 0.72;    
+}
+
+.list-group-item.list-group-item-action.flex-column.align-items-start:hover {
+    background-color: #03A9F4;
+    color: white;
+}
+
+.inbox-item-detail.card .card-body p {
+    background-color: rgb(204, 198, 198);
+    border-radius: 3px;
+    margin-bottom: 3px;
+    font-size: 15px;
+    max-width: 240px;
+    padding: 3px;
+    line-height: 118%;
+    overflow: hidden;
+    word-break: break-word;
+    width:fit-content;
+    width:-webkit-fit-content;
+    width:-moz-fit-content;
+    padding-left: 5px;
+    padding-bottom: 4px;
+    padding-top: 4px;
+    padding-right: 5px;
+}
+
+.inbox-item-detail.card .card-body footer {
+    font-size: 72%;
+}
+
+.inbox-item-detail.card .card-header {
+    font-size: 22px;
+    padding-bottom: 8px;
+    padding-top: 8px;
+}
+
+.inbox-message {
+    background-color: rgb(204, 198, 198);
+    border-radius: 3px;
+    margin-bottom: 3px;
+    font-size: 15px;
+    max-width: 240px;
+    padding: 3px;
+    line-height: 118%;
+    overflow: hidden;
+    word-break: break-word;
+    width:fit-content;
+    width:-webkit-fit-content;
+    width:-moz-fit-content;
+    padding-left: 5px;
+    padding-bottom: 4px;
+    padding-top: 4px;
+    padding-right: 5px;
+}
+
+.blockquote.iamowner {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 10px;
+}
+
+.blockquote {
+    margin-bottom: 10px;    
+}
+
+
+
+.form-group.bmd-form-group {
+    margin-bottom: 0px;
+}
+
+.inbox-item-upload-form {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+
+
+.inbox-item-upload-form .form-group button {
+    float: right;
+    margin-top: 10px;
+}
+
+.inbox-item-upload-form .form-group label {
+    color: #03A9F4;
+}
+
+
+ .btn.btn-primary:focus {
+     color: #03A9F4;
+     background-color: white;
+ }
+
+ .btn.btn-primary:active {
+    color: #03A9F4;
+    background-color: white;
+}
+
+.list-group-item.list-group-item-action.flex-column.align-items-start p {
+    word-break: break-word;
+}
+
+.list-group.inbox-item-list-group.card {
+    height: 600px;
+    overflow: auto;
+}
+
+.blockquote.xxx.iamowner p {
+    background-color: #03A9F4;
+    color: white;
+}
