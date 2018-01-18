@@ -1,5 +1,6 @@
 import os.path
 import time
+import yagmail
 
 def log(*args, **kwargs):
     # time.time() 返回 unix time

@@ -315,7 +315,7 @@ img.reply-user-image {
 
 .inbox-area {
     display: flex;
-    margin-top: 20px;
+    margin-top: 5px;
 }
 
 .list-group.inbox-item-list-group {
@@ -442,4 +442,37 @@ img.reply-user-image {
 .blockquote.xxx.iamowner p {
     background-color: #03A9F4;
     color: white;
+}
+
+.block-layer {
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 100%;
+    width: 100%;
+    z-index: 100;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.inbox-add-card {
+    z-index: 101;
+    height: 250px;
+    width: 350px;
+    background-color: white;
+    position: relative;
+    padding: 20px;
+
+}
+
+.hide {
+    display: none;
+}
+
+.show-add-inbox-block.btn.btn-info.btn-lg.active {
+    color: #03A9F4;
+    margin-left: 10px;
+    margin-top: 10px;
 }

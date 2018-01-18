@@ -9,12 +9,12 @@ class User(Model):
         self.username = self.email
         self.password = form.get("password", None)
         self.user_image = "default.jpg"
-        self.level = 1
+        self.level = 0
         self.inbox = []
+        self.active_code = None
 
     def validate_register(self):
         if len(self.email) >= 3 and len(self.password) >= 3 and User.find_by(email=self.email) is None:
-
             return True
         else:
             return False
@@ -41,6 +41,5 @@ class User(Model):
         self.password = hashed_pasword
 
     def bind_inbox_item(self, inbox_item):
-        self.inbox = []
         self.inbox.append(inbox_item)
         self.update()

@@ -30,6 +30,7 @@ def index():
         return render_template("BBS/inbox.html", users=us, inbox_items=inbox_items, user=u)
     elif request.method == "POST":
         form = request.form
+        print(form)
         receiver = User.find_by(_id=ObjectId(request.form.get("chat-people")))
         dialogue_content = request.form.get("dialogue")
         inbox_item = Inbox.get_inbox_item(receiver.email, u.email)

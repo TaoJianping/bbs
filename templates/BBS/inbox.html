@@ -14,15 +14,7 @@
     <title>私信</title>
 </head>
 <body>
-    <form action="{{ url_for('inbox.index') }}" method="POST">
-        <select name="chat-people" class="custom-select mb-2 mr-sm-2 mb-sm-0" id="inlineFormCustomSelect">
-            {% for u in users %}
-            <option value= {{ u._id }}> {{ u.username }}</option>
-            {% endfor %}
-        </select>
-        <input type="text" name=dialogue>
-        <button type="submit">提交</button>
-    </form>
+    <button class="show-add-inbox-block btn btn-info btn-lg active card">写私信</button>
     <div class="inbox-area">
         <div class="list-group inbox-item-list-group card">
                 <nav class="navbar navbar-light bg-light">
@@ -49,10 +41,35 @@
             {% endif %} 
         </div>
         <div class="inbox-item-detail card">
-
+        </div>
+        <div class="block-layer hide">
+            <div class="inbox-add-card card">
+                <form action="{{ url_for('inbox.index') }}" method="POST" id="formid">
+                    <select name="chat-people" class="custom-select mb-2 mr-sm-2 mb-sm-0" id="inlineFormCustomSelect">
+                        {% for u in users %}
+                        <option value= {{ u._id }}> {{ u.username }}</option>
+                        {% endfor %}
+                    </select> 
+                    <button class="btn btn-info" type="submit">提交</button>
+                </form>
+                <textarea name="dialogue" cols="30" rows="4" form="formid"> 
+                </textarea> 
+            </div>
         </div>
     </div>
+    <script>
+        const addInbox = document.querySelector(".block-layer")
+        const showInboxCard = document.querySelector(".show-add-inbox-block")
 
+        showInboxCard.addEventListener("click", function(e) {
+            addInbox.classList.remove("hide")
+        })
+        addInbox.addEventListener("click", function(e) {
+            if (e.target.classList.contains("block-layer")) {
+                addInbox.classList.add("hide")
+            }
+        })
+    </script>
     <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
     <script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js" integrity="sha384-fA23ZRQ3G/J53mElWqVJEGJzU0sTs+SvzG8fXVWP+kJQ1lwFAOkcUOysnlKJC33U" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/bootstrap-material-design@4.0.0-beta.4/dist/js/bootstrap-material-design.js" integrity="sha384-3xciOSDAlaXneEmyOo0ME/2grfpqzhhTcM4cE32Ce9+8DW/04AGoTACzQpphYGYe" crossorigin="anonymous"></script>

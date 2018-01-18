@@ -7,10 +7,12 @@ from flask import request
 from flask import url_for
 from flask import session
 
+import uuid
+import yagmail
+
 from models.user import User
-
 from utils import log
-
+from config import mail_password, mail_user
 
 
 main = Blueprint("login", __name__)
@@ -34,6 +36,14 @@ def add_user():
     if user.validate_register() is True:
         user.hash_password()
         user.save()
+        code = uuid.uuid1()
+        # 邮箱正文
+        url = "http://localhost:2000" + url_for(".activiate_user") + "?user=" + user.email + "&" + "token=" + str(code)
+        contents = [url]
+        # 发送邮件
+        print(contents)
+        yag = yagmail.SMTP(user=mail_user, password=mail_password, host='smtp.qq.com')
+        yag.send(user.email, '验证激活', contents)
         return redirect(url_for(".index"))
     else:
         return redirect(url_for(".register"))
@@ -48,6 +58,12 @@ def login():
         return redirect(url_for("bbs.index"))
     else:
         return redirect(url_for(".register"))
+
+
+@main.route("/activiate", methods=["GET"])
+def activiate_user():
+    print(request.args)
+    return redirect(url_for("bbs.index"))
 
 
 @main.route("/log_out", methods=["GET"])
