@@ -11,11 +11,11 @@
     <title> {{ t.title }} </title>
 </head>
 <body id="topic-detail">
-    <div class="topic-detail-side col-9">
+    <div class="topic-detail-side">
         <div class="topic_detail card">
                 <div class="topic_header"> {{ t.title }} </div>
                 <div class="topic-info">
-                    ⏲️ 发布时间： {{ t.ct }} &nbsp; | &nbsp; 📝 回复： {{ t.get_replynumber() }} &nbsp; | &nbsp; 🕮 阅读： {{ t.view }} 
+                    ⏲️ 发布时间： {{ t.to_time() }} &nbsp; | &nbsp; 📝 回复： {{ t.get_replynumber() }} &nbsp; | &nbsp; 🕮 阅读： {{ t.view }} 
                 </div>
                 <hr class="style-four">
                 <div id="doc-content">
@@ -29,7 +29,7 @@
                         <img class="reply-user-image col-md-2" src= {{ url_for("static", filename= "user_image/" + r.get_replymaker_image() ) }} alt="您的头像" srcset=""/>
                     <ul class="reply-info col-md-10">  
                         <li>
-                            <span class="reply-writer-info"> {{r.get_replymaker()}} &nbsp; | &nbsp; {{ r.ct }}</span>
+                            <span class="reply-writer-info"> {{r.get_replymaker()}} &nbsp; | &nbsp; {{ r.to_time() }}</span>
                             <span class="reply-floor-info"> {{ loop.index }}楼 </span>
                         </li>                                                          
                         <li>
@@ -50,9 +50,21 @@
         </div>
         </div>
     </div>
-    <div class="topic-detail-other-side col-3">
-        <div class="user-info">
-
+    <div class="topic-detail-other-side">
+        <div class="user-info card">
+            <img src= {{ url_for('static', filename='user_image/' + u.user_image)}}>
+            <p>{{ u.username }}</p>
+            <a href="#">他的文章</a>
+            <button type="button" class="btn btn-outline-primary">Follow</button>
+        </div>
+        <div class="user-topic card">
+            <tit>他的最新文章</tit>
+            <hr>
+            {% if ts %}
+            {% for t in ts %}
+            <a href="{{ url_for('topic.detail', topic_id=t._id )}}">{{ loop.index }}.{{ t.title }}</a>
+            {% endfor %}
+            {% endif %}
         </div>
     </div>          
     <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>

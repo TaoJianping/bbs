@@ -4,7 +4,7 @@ import random
 
 from utils import log
 
-# import pymongo
+import pymongo
 from pymongo import MongoClient
 # 首先要连接mongodb,如果你什么都不写就连接默认的地址
 client = MongoClient()
@@ -48,7 +48,6 @@ class Model(object):
         '''
         # data = list(db[data_name].find(query, {"_id": 0}))
         data = list(db[cls.__name__].find(query))
-        # print('所有用户', user_list)
         return data
 
     @classmethod
@@ -206,4 +205,9 @@ class Model(object):
 
     def to_time(self):
         return time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(self.ct))
+
+    @classmethod
+    def find_by_sort(cls, con, **kwargs):
+        ms = list(db[cls.__name__].find(kwargs).sort(con, pymongo.DESCENDING))
+        return ms
         

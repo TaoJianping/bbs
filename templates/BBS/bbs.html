@@ -77,7 +77,7 @@
                     {% for m in ms %}
                     <a href="{{ url_for('topic.detail', topic_id=m._id )}}" class="topic-each-item list-group-item list-group-item-action flex-column align-items-start">
                       <div class="d-flex w-100 justify-content-between">
-                        <h5 class="mb-1"> {{ m.title }} </h5>
+                        <h5 class="mb-1 XXX"> {{ m.title }} </h5>
                         <small>3 days ago</small>
                       </div>
                       <small> {{ m.get_replynumber() }}/{{ m.view }} </small>

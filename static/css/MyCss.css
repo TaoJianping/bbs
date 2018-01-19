@@ -239,6 +239,7 @@ body#topic-detail {
     text-align: left;
     padding: 5%;
     padding-top: 3%;
+    display: flex;
 }
 
 #board-topic-detail {
@@ -249,6 +250,10 @@ body#topic-detail {
     padding: 10px;
 }
 
+.topic-detail-side {
+    flex: 0.68;
+}
+
 .topic-detail-side .topic_detail.card {
     padding: 2%;
 }
@@ -256,6 +261,8 @@ body#topic-detail {
 .topic_detail.card .topic_header {
     font-size: 30px;
     font-weight: bold;
+    word-wrap: break-word; 
+    word-break:break-all;
 }
 
 
@@ -475,4 +482,78 @@ img.reply-user-image {
     color: #03A9F4;
     margin-left: 10px;
     margin-top: 10px;
+}
+
+.topic-detail-other-side {
+    flex: 0.3;
+    margin-left: 20px;
+    flex-direction: column;
+}
+
+.user-info {
+    display: flex;
+    height: 300px;
+    flex-direction: column;    
+    align-items: center;
+}
+
+.user-info.card img {
+    height: 60px;
+    width: 60px;
+    border-radius: 100%;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+.user-info.card a {
+    margin-top: 40px;
+}
+
+.user-info.card button {
+    margin-top: 20px;
+}
+
+.user-topic.card {
+    padding-top: 15px;
+    /* height: 400px; */
+}
+
+.user-topic.card tit {
+    margin-left: 5px;
+    padding-left: 5px;
+    border-style: solid;
+    border-color: #009688;
+    border-width: 10px;
+    border-bottom-width: 0;
+    border-top-width: 0;
+    border-right-width: 0;
+}
+.user-topic.card hr {
+    margin-top: 5px;
+    margin-bottom: 5px;    
+}
+
+.user-topic.card a {
+    display: block;
+    width: 340px;
+    margin-left: 10px;
+    margin-right: 10px;    
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: 20px;
+    color: rgb(73, 73, 73);
+    /* 下面的能完成自动换行 */
+    word-wrap: break-word; 
+    word-break:break-all;
+    /* 下面是能有省略号 */
+    /* 注意要设定宽度 */    
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+}
+
+.list-group.topic-list .topic-each-item.list-group-item.list-group-item-action.flex-column.align-items-start .mb-1.XXX {
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
 }
