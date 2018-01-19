@@ -33,7 +33,7 @@ def login_require(func):
     @functools.wraps(func)
     def wrap(*args, **kwargs):
         u = current_user()
-        if u is not None:
+        if u is not None and u.level == 1:
             return func(*args, **kwargs)
         else:
             return redirect(url_for("login.index"))
@@ -69,9 +69,3 @@ def index(board_id=None):
             board = Board.find_by(_id=ObjectId(board_id))
             ms = Topic.find_byPage(page, sort, board_id=ObjectId(board_id))
     return render_template("BBS/bbs.html",filter=board, pagenumber=page_number, sort=sort, ms=ms, boards=boards)
-
-
-@main.route("/log_out", methods=["GET"])
-def log_out():
-    session.pop("username")
-    return redirect(url_for("topic.index"))

@@ -11,7 +11,7 @@ class User(Model):
         self.user_image = "default.jpg"
         self.level = 0
         self.inbox = []
-        self.active_code = None
+        self.token = None
 
     def validate_register(self):
         if len(self.email) >= 3 and len(self.password) >= 3 and User.find_by(email=self.email) is None:
@@ -41,5 +41,17 @@ class User(Model):
         self.password = hashed_pasword
 
     def bind_inbox_item(self, inbox_item):
+        """给用户绑定私信，用于后续的载入"""
         self.inbox.append(inbox_item)
         self.update()
+
+    def activate_user(self, token):
+        """激活用户"""
+        print("用户的token是", self.token)
+        print("传过来的token是", token)
+        if str(self.token) == str(token):
+            self.token = None
+            self.level = 1
+            self.update()
+            return True
+        return False

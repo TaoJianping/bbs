@@ -45,6 +45,7 @@ def index():
 
 @main.route("/<string:inbox_id>", methods=["GET", "POST"])
 def inbox_detail(inbox_id):
+    """私信的详细页面"""
     inbox_item = Inbox.find_one(_id=ObjectId(inbox_id))
     u = current_user()
     if u.email in inbox_item.unmarked:

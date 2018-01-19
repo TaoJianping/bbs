@@ -6,6 +6,7 @@ from flask import make_response
 from flask import request
 from flask import url_for
 from flask import session
+from flask import abort
 
 import uuid
 import yagmail
@@ -34,11 +35,12 @@ def add_user():
     form = request.form
     user = User(form)
     if user.validate_register() is True:
+        token = uuid.uuid1()
+        user.token = token
         user.hash_password()
         user.save()
-        code = uuid.uuid1()
         # 邮箱正文
-        url = "http://localhost:2000" + url_for(".activiate_user") + "?user=" + user.email + "&" + "token=" + str(code)
+        url = "http://localhost:2000" + url_for(".activate_user") + "?user=" + user.email + "&" + "token=" + str(token)
         contents = [url]
         # 发送邮件
         print(contents)
@@ -60,13 +62,27 @@ def login():
         return redirect(url_for(".register"))
 
 
-@main.route("/activiate", methods=["GET"])
-def activiate_user():
-    print(request.args)
+@main.route("/activate", methods=["GET"])
+def activate_user():
+    d = request.args
+    u = User.find_by(email=d.get("user"))
+    if u is None:
+        abort(404)
+    if d.get("token"):
+        token = d.get("token")
+    elif d.get("amp;token"):
+        token = d.get("amp;token")
+    else:
+        abort(404)
+    print("token is :", token)
+    ans = u.activate_user(token)
+    if ans == False:
+        abort(404)
     return redirect(url_for("bbs.index"))
 
 
 @main.route("/log_out", methods=["GET"])
 def log_out():
-    session.pop("username")
+    if session.get("email") is not None:
+        session.pop("email")
     return redirect(url_for("bbs.index"))
