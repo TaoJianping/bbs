@@ -41,11 +41,15 @@
                 {%endfor%}
             </div>
             <div class="Reply_reply">
+                {% if show_reply %}
                 <form action= {{ url_for("reply.add")}} method="POST">
                 <input type="hidden" value= {{ t._id }} name="topic_id">
                 <textarea name="content" cols="30" rows="10" placeholder="请输入评论"></textarea>
                 <button>提交</button>
-                </form>  
+                </form>
+                {% else %}
+                <a href="{{url_for('login.index')}}">登录回复</a>
+                {% endif %}
             </div>
         </div>
         </div>
@@ -54,8 +58,18 @@
         <div class="user-info card">
             <img src= {{ url_for('static', filename='user_image/' + u.user_image)}}>
             <p>{{ u.username }}</p>
-            <a href="#">他的文章</a>
-            <button type="button" class="btn btn-outline-primary">Follow</button>
+            <a href="{{ url_for('topic.topic_all', user_id=u._id)}}">他的文章</a>
+            <form action="{{url_for('bbs.follow')}}" method="post">
+                <input type="hidden" name="object_user_id" value="{{u._id}}">
+                <input type="hidden" name="topic_id" value="{{t._id}}">
+                {% if beshow == True %}
+                <button type="submit" class="btn btn-outline-primary">Follow</button>
+                {% elif  beshow == False %}
+                <button type="submit" class="btn btn-outline-primary">Followed</button>
+                {% elif  beshow == None %}
+                <button type="submit" disabled="disabled" class="btn btn-outline-primary">Follow</button>
+                {% endif %}
+            </form>
         </div>
         <div class="user-topic card">
             <tit>他的最新文章</tit>

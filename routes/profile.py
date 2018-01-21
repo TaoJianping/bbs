@@ -7,11 +7,13 @@ from flask import (
     Blueprint,
     make_response,
     send_from_directory,
-    flash,
+    abort,
 )
 
 import os
+import uuid
 from werkzeug import secure_filename
+import yagmail
 from utils import log   
 
 from models.user import User
@@ -19,6 +21,8 @@ from routes.bbs import current_user
 from .bbs import login_require
 from config import accept_user_file_type
 from config import folder_image_name
+from config import mail_password, mail_user
+
 
 from bson.objectid import ObjectId
 
@@ -71,4 +75,40 @@ def edit_user():
     for k, v in request.form.items():
         setattr(user, k, v)
     user.update()
+    return redirect(url_for(".index"))
+
+
+@main.route("/change_password", methods=["GET", "POST"])
+def change_password():
+    if request.method == "GET":
+        user_id = request.args.get("user_id", None)
+        u = User.find_by(_id=ObjectId(user_id))
+        token = request.args.get("token", None)
+        if user_id is None or token is None and u.token != token:
+            abort(404)
+        return render_template("BBS/change_password.html", user_id=user_id)
+    elif request.method == "POST":
+        user_id = request.form.get("user_id")
+        password = request.form.get("password")
+        u = User.find_by(_id=ObjectId(user_id))
+        u.password = password
+        u.hash_password()
+        u.token = None
+        u.update()
+        return redirect(url_for(".index"))
+
+
+@main.route("/send_password_email", methods=["GET"])
+@login_require
+def send_password_email():
+    token = uuid.uuid1()
+    user = current_user()
+    user.token = token
+    user.update()
+    # 邮箱正文
+    url = "http://localhost:2000" + url_for(".change_password") + "?user_id=" + str(user._id) + "&" + "token=" + str(token)
+    contents = [url]
+    # 发送邮件
+    yag = yagmail.SMTP(user=mail_user, password=mail_password, host='smtp.qq.com')
+    yag.send(user.email, '修改密码', contents)
     return redirect(url_for(".index"))

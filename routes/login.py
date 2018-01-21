@@ -43,7 +43,6 @@ def add_user():
         url = "http://localhost:2000" + url_for(".activate_user") + "?user=" + user.email + "&" + "token=" + str(token)
         contents = [url]
         # 发送邮件
-        print(contents)
         yag = yagmail.SMTP(user=mail_user, password=mail_password, host='smtp.qq.com')
         yag.send(user.email, '验证激活', contents)
         return redirect(url_for(".index"))

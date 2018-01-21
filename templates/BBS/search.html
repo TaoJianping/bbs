@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-        <!-- Required meta tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Material Design for Bootstrap fonts and icons -->
@@ -12,19 +13,27 @@
     <link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.0.0-beta.4/dist/css/bootstrap-material-design.min.css" integrity="sha384-R80DC0KVBO4GSTw+wZ5x2zn2pu4POSErBkf8/fSFhPXHxvHJydT0CSgAP2Yo2r4I" crossorigin="anonymous">
 
     <link rel="stylesheet" href="../../static/css/MyCss.css">
-    <title>私信</title>
-    <title>change-password</title>
+    <title>搜索结果</title>
 </head>
 <body>
-        <div class="block-layer">
-            <div class="inbox-add-card card">
-                <form action="{{ url_for('profile.change_password') }}" method="POST" id="formid">
-                    <input type="hidden" name="user_id" value="{{user_id}}">
-                    <input type="password" name="password">
-                    <button class="btn btn-info" type="submit">改变密码</button>
-                </form>
+    <div class="col-md-10">
+        <div class="card text-center">
+            <div class="card-header">
+                结果
             </div>
-        </div>
+            <div class="list-group topic-list">
+                {% for m in ms %}
+                <a href="{{ url_for('topic.detail', topic_id=m._id )}}" class="topic-each-item list-group-item list-group-item-action flex-column align-items-start">
+                  <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1 XXX"> {{ m.title }} </h5>
+                    <small>3 days ago</small>
+                  </div>
+                  <small> {{ m.get_replynumber() }}/{{ m.view }} </small>
+                </a>
+                {% endfor %}
+              </div>
+          </div>
+    </div>
     <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
     <script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js" integrity="sha384-fA23ZRQ3G/J53mElWqVJEGJzU0sTs+SvzG8fXVWP+kJQ1lwFAOkcUOysnlKJC33U" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/bootstrap-material-design@4.0.0-beta.4/dist/js/bootstrap-material-design.js" integrity="sha384-3xciOSDAlaXneEmyOo0ME/2grfpqzhhTcM4cE32Ce9+8DW/04AGoTACzQpphYGYe" crossorigin="anonymous"></script>

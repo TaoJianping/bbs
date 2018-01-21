@@ -1,4 +1,5 @@
 import hashlib
+from bson import ObjectId
 
 from models import Model
 
@@ -12,6 +13,8 @@ class User(Model):
         self.level = 0
         self.inbox = []
         self.token = None
+        self.following_list = []
+        self.follower_list = []
 
     def validate_register(self):
         if len(self.email) >= 3 and len(self.password) >= 3 and User.find_by(email=self.email) is None:
@@ -47,11 +50,22 @@ class User(Model):
 
     def activate_user(self, token):
         """激活用户"""
-        print("用户的token是", self.token)
-        print("传过来的token是", token)
         if str(self.token) == str(token):
             self.token = None
             self.level = 1
             self.update()
             return True
         return False
+
+    def toggle_follow_object(self, object_user_id):
+        object_user = User.find_by(_id=ObjectId(object_user_id))
+        if ObjectId(object_user_id) in self.following_list:
+            object_user.follower_list.remove(self._id)
+            self.following_list.remove(ObjectId(object_user_id))
+        else:
+            object_user.follower_list.append(self._id)
+            self.following_list.append(ObjectId(object_user_id))
+            object_user.update()
+            self.update()
+        object_user.update()
+        self.update()

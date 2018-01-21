@@ -33,8 +33,8 @@
               <a class="nav-link" href="#">Player</a>
             </li>
         </ul>
-        <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+        <form class="form-inline my-2 my-lg-0" action="{{ url_for('bbs.search')}}" method="GET">
+          <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" name="query">
           <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Search</button>
         </form>
       </div>
@@ -68,7 +68,7 @@
                       <div class="dropdown-menu">
                         <a class="dropdown-item" href="/{{ filter._id }}?sort=view">最热讨论</a>
                         <a class="dropdown-item" href="/{{ filter._id }}?sort=ct">最新发布</a>
-                        <a class="dropdown-item" href="#">最新回复</a>                     
+                        <a class="dropdown-item" href="/{{ filter._id }}?sort=rt">最新回复</a>
                       </div>
                     </li>
                   </ul>
@@ -78,7 +78,7 @@
                     <a href="{{ url_for('topic.detail', topic_id=m._id )}}" class="topic-each-item list-group-item list-group-item-action flex-column align-items-start">
                       <div class="d-flex w-100 justify-content-between">
                         <h5 class="mb-1 XXX"> {{ m.title }} </h5>
-                        <small>3 days ago</small>
+                        <small> {{m.get_time_internal()}} </small>
                       </div>
                       <small> {{ m.get_replynumber() }}/{{ m.view }} </small>
                     </a>
@@ -86,15 +86,27 @@
                   </div>
                 <nav aria-label="...">
                     <ul class="pagination justify-content-center">
-                      <li class="page-item disabled">
-                        <span class="page-link">Previous</span>
-                      </li>
-                      {% for i in range(pagenumber) %}
-                      <li class="page-item"><a class="page-link" href="{{ filter._id }}?page={{ loop.index }}&sort={{ sort }}"> {{ loop.index }} </a></li>
-                      {% endfor %}
+                      {% if former_page %}
                       <li class="page-item">
-                        <a class="page-link" href="#">Next</a>
+                          <a class="page-link" href="/{{ filter._id }}?page={{ former_page }}&sort={{ sort }}">Previous</a>
                       </li>
+                      {% else %}
+                      <li class="page-item disabled">
+                          <a class="page-link" href="#">Previous</a>
+                      </li>
+                      {% endif %}
+                      {% for i in range(pagenumber) %}
+                      <li class="page-item"><a class="page-link" href="/{{ filter._id }}?page={{ loop.index }}&sort={{ sort }}"> {{ loop.index }} </a></li>
+                      {% endfor %}
+                      {% if next_page %}
+                      <li class="page-item">
+                          <a class="page-link" href="/{{ filter._id }}?page={{ next_page }}&sort={{ sort }}">Next</a>
+                      </li>
+                      {% else %}
+                      <li class="page-item disabled">
+                          <a class="page-link" href="#">Next</a>
+                      </li>
+                      {% endif %}
                     </ul>
                   </nav>
               </div>

@@ -1,8 +1,9 @@
 import json
 import time
 import random
+import math
 
-from utils import log
+# from utils import log
 
 import pymongo
 from pymongo import MongoClient
@@ -210,4 +211,14 @@ class Model(object):
     def find_by_sort(cls, con, **kwargs):
         ms = list(db[cls.__name__].find(kwargs).sort(con, pymongo.DESCENDING))
         return ms
-        
+
+    def get_time_internal(self):
+        time_now = int(time.time())
+        internal = time_now - self.ct
+        if internal < 3600:
+            rt = "发布于" + str(math.ceil(internal/(60))) + "分钟前"
+        elif 3600 <= internal < 43200:
+            rt = "发布于" + str(math.floor(internal/(60*60))) + "小时前"
+        else:
+            rt = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(self.ct))
+        return rt

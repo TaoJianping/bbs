@@ -16,6 +16,7 @@ class Topic(Model):
         self.ct = int(time.time())        
         self.view = 0
         self.board_id = ObjectId(form.get("board_id", None))
+        self.rt = None
 
     def get_replynumber(self):
         rn = str(len(Reply.find_all(topic_id=ObjectId(self._id))))
@@ -32,3 +33,5 @@ class Topic(Model):
             topic_number = cls.get_collection_number(board_id=ObjectId(board_id))
         page_number = math.ceil(topic_number/7)
         return page_number
+
+
