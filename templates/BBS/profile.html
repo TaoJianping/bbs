@@ -17,7 +17,7 @@
             </div>
             {% endfor %}
             <div class="user-head-image">
-                    <img src= {{ url_for(".user_img", filename=user.user_image) }} alt="您的头像" srcset=""/>                      
+                    <img src= {{ url_for("static", filename="user_image/" + user.user_image) }} alt="您的头像" srcset=""/>                      
                     <form action= {{ url_for(".add_image") }} method="post" enctype="multipart/form-data">
                         <label class="Upload-Avatar-button card" for="img_input">上传文件</label>                
                         <input id="img_input" type=file name=file style="display: none;">
