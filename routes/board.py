@@ -9,15 +9,9 @@ from flask import (
 
 from models.user import User
 from models.board import Board
-from .bbs import admin_require
+from .bbs import admin_require, current_user
 
 main = Blueprint("board", __name__)
-
-
-def current_user():
-    username = session.get("username", None)
-    user = User.find_by(username=username)
-    return user
 
 
 @main.route("/board", methods=["GET"])
@@ -25,7 +19,7 @@ def current_user():
 def board():
     u = current_user()
     if u == None:
-        redirect(url_for("bbs.index"))
+        return redirect(url_for("bbs.index"))
     else:
         return render_template("BBS/board.html")
     

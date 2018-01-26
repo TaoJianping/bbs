@@ -12,12 +12,10 @@ from flask import (
 
 from models.user import User
 from models.topic import Topic
-from models.reply import Reply
 from models.board import Board
 
 from bson.objectid import ObjectId
 
-from utils import log
 
 
 
