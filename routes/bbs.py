@@ -34,7 +34,7 @@ def login_require(func):
     @functools.wraps(func)
     def wrap(*args, **kwargs):
         u = current_user()
-        if u is not None and u.level == 1:
+        if u is not None and u.level > 0:
             return func(*args, **kwargs)
         else:
             return redirect(url_for("login.index"))
