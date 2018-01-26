@@ -9,7 +9,11 @@ import app
 sys.path.insert(0, abspath(dirname(__file__)))
 application = app.app
 
+
 """
+gunicorn wsgi --bind 0.0.0.0:2001
+
+
 建立一个软连接
 ln -s /var/www/bbs/bbs.conf /etc/supervisor/conf.d/bbs.conf
 
@@ -30,5 +34,5 @@ autorestart=true
 
 /usr/local/bin/gunicorn wsgi
 --bind 0.0.0.0:2001
---pid /tmp/飙泪og.pid
+--pid /tmp/bbs.pid
 """
