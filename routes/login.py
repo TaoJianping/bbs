@@ -40,7 +40,7 @@ def add_user():
         user.hash_password()
         user.save()
         # 邮箱正文
-        url = "http://localhost:2000" + url_for(".activate_user") + "?user=" + user.email + "&" + "token=" + str(token)
+        url = request.host + url_for(".activate_user") + "?user=" + user.email + "&" + "token=" + str(token)
         contents = [url]
         # 发送邮件
         yag = yagmail.SMTP(user=mail_user, password=mail_password, host='smtp.qq.com')

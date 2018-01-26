@@ -106,7 +106,7 @@ def send_password_email():
     user.token = token
     user.update()
     # 邮箱正文
-    url = "http://localhost:2000" + url_for(".change_password") + "?user_id=" + str(user._id) + "&" + "token=" + str(token)
+    url = request.host + url_for(".change_password") + "?user_id=" + str(user._id) + "&" + "token=" + str(token)
     contents = [url]
     # 发送邮件
     yag = yagmail.SMTP(user=mail_user, password=mail_password, host='smtp.qq.com')
