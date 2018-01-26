@@ -60,9 +60,9 @@ def index(board_id=None):
     else:
         former_page = page - 1
     sort = request.args.get("sort", "ct")
-    if (board_id is None) or (board_id == "5a1e9237fe3d2659def8f88f"):
+    if (board_id is None) or (board_id == "5a6b00b965d4400b98bcf605"):
         page_number = Topic.get_page_number()
-        board = Board.find_by(_id=ObjectId("5a1e9237fe3d2659def8f88f"))  
+        board = Board.find_by(_id=ObjectId("5a6b00b965d4400b98bcf605"))
         ms = Topic.find_byPage(page, sort)
     else:
         if len(board_id) < 12:
