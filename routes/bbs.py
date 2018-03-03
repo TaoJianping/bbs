@@ -1,5 +1,4 @@
 import functools
-import math
 from flask import (
     render_template,
     request,
@@ -89,6 +88,7 @@ def search():
         if query in i.title.lower():
             ret.append(i)
     return render_template("BBS/search.html", ms=ret)
+
 
 @main.route("/follow", methods=["POST"])
 def follow():

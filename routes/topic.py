@@ -46,7 +46,7 @@ def detail(topic_id):
     topic_writer_topics = Topic.find_by_sort("ct", user_id=ObjectId(topic_writer._id))
     if len(topic_writer_topics) > 10:
         topic_writer_topics = topic_writer_topics[:10]
-    if u:
+    if u is not None and topic_writer._id != u._id:
         be_show = topic_writer._id not in u.following_list
     else:
         be_show = None
@@ -54,7 +54,6 @@ def detail(topic_id):
         show_reply = True
     else:
         show_reply = None
-    print(show_reply)
     return render_template("BBS/topic_detail.html", t=t, replys=r, u=topic_writer,
                            ts=topic_writer_topics, beshow=be_show, show_reply=show_reply)
 
