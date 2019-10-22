@@ -38,7 +38,7 @@ olefile==0.44
 optional-django==0.1.0
 pep8==1.7.1
 pexpect==4.2.1
-Pillow==4.1.1
+Pillow==6.2.0
 pluggy==0.6.0
 psutil==5.4.2
 py==1.5.2
